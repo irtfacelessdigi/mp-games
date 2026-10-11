@@ -55,7 +55,7 @@ const mon=(f,s=54)=>`<svg width="${s}" height="${s}" viewBox="0 0 60 60"><path d
 const SQ=[[['🍞','roti'],['🥬','selada'],['🍅','tomat'],['🧀','keju'],['🥪','jadi!']],[['🚰','basahi'],['🧴','sabun'],['👐','gosok'],['🚿','bilas'],['🧻','lap']],[['⏰','bangun'],['🪥','sikat gigi'],['🚿','mandi'],['🍚','sarapan'],['🎒','berangkat']],[['🌰','biji'],['🌱','tunas'],['🌿','tumbuh'],['🌳','pohon'],['🍎','buah']],[['🥚','telur'],['🐛','ulat'],['🧶','kepompong'],['🦋','kupu-kupu']]];
 const CD=['#fde047','#4ade80','#ef4444','#a855f7','#9ca3af','#f59e0b','#92400e','#111','#0ea5e9'];
 
-const thumb=(g,k)=>`<img src="gambar%20mockup%20menu/${k==3?'slice-04%20(2)':'slice-'+String(k+1).padStart(2,'0')}.png" alt="" onerror="this.outerHTML=G[${k}].th">`;
+const thumb=(g,k)=>{const d='gambar%20mockup%20menu/',n=String(k+1).padStart(2,'0');return `<img src="${d}slice-${n}.png" alt="" onerror="${k==3?`if(!this.dataset.t){this.dataset.t=1;this.src='${d}slice-04%20(2).png';return}`:''}this.outerHTML=G[${k}].th">`};
 const G=[
 {id:'beda',t:'Cari yang Beda',a:[2,3],n:5,i:'Ketuk monster yang warnanya berbeda (cari bug-nya!)',
  th:ph(c(26,55,6,'#22c55e')+c(38,55,6,'#22c55e')+c(50,55,6,'#ef4444')+c(62,55,6,'#22c55e')+c(74,55,6,'#22c55e')+bar),
