@@ -321,6 +321,28 @@ const pn0=gi('panah').r;gi('panah').r=(el,ans,i,lv)=>{pn0(el,ans,i,lv);const n=[
 const VT=['membuat roti isi','mencuci tangan','kegiatan pagi hari','pohon tumbuh','kupu-kupu tumbuh'];
 const ur0=gi('urut').r;gi('urut').r=(el,ans,i,lv)=>{ur0(el,ans,i,lv);qtxt='Urutkan langkah '+VT[i]+'. Ketuk gambar dari langkah satu!'};
 const an1=gi('angka').r;gi('angka').r=(el,ans,i,lv)=>{an1(el,ans,i,lv);if(lv==1){const n=(el.querySelector('.big').textContent.match(/\d/g)||[]).join(', ');qtxt='Kodenya '+n+'. Pilih warna yang cocok dengan kunci di atas!'}};
+
+/* ===== Warnai Istana ===== */
+H.istana=['Lihat kunci kode di atas: tiap bentuk punya warna.','Pilih warna dari palet di bawah gambar.','Ketuk bagian istana yang bentuknya cocok dengan warna itu.','Bagian yang abu-abu tidak perlu diwarnai.'];
+LV.istana=['6 bagian, kode warna tetap','9 bagian, kode warna berubah tiap soal','12 bagian, ada warna pengecoh'];
+G.push({id:'istana',t:'Warnai Istana',a:[4,6],n:3,i:'Warnai istana sesuai kode bentuk di atas!',
+ th:ph('<polygon points="28,54 50,24 72,54" fill="#ef4444"/><rect x="34" y="54" width="32" height="44" fill="#3b82f6"/><rect x="45" y="62" width="10" height="10" fill="#facc15"/><circle cx="72" cy="30" r="8" fill="#22c55e"/>'+bar),
+ r(el,ans,i,lv){
+  const TY=['tri','sq','rect','circ'],K={tri:'Segitiga',sq:'Persegi',rect:'Persegi panjang',circ:'Lingkaran'},CL={'#ef4444':'merah','#facc15':'kuning','#3b82f6':'biru','#22c55e':'hijau','#a855f7':'ungu','#f97316':'jingga'},base=['#ef4444','#facc15','#3b82f6','#22c55e'];
+  const cols=lv==1?base:SH(base),M={};TY.forEach((t,j)=>M[t]=cols[j]);
+  const pal=SH(lv==3?[...base,'#a855f7','#f97316']:base);
+  const A=[['bodyL','rect','x="40" y="140" width="44" height="100"'],['bodyR','rect','x="216" y="140" width="44" height="100"'],['wallL','rect','x="84" y="185" width="36" height="55"'],['wallR','rect','x="180" y="185" width="36" height="55"'],['bodyC','rect','x="120" y="100" width="60" height="140"'],
+   ['roofL','tri','points="34,140 90,140 62,98"'],['roofR','tri','points="210,140 266,140 238,98"'],['roofC','tri','points="112,100 188,100 150,48"'],
+   ['winL','sq','x="51" y="160" width="22" height="22"'],['winR','sq','x="227" y="160" width="22" height="22"'],['winC','sq','x="138" y="116" width="24" height="24"'],
+   ['door','rect','x="135" y="190" width="30" height="50"'],
+   ['moon','circ','cx="240" cy="42" r="20"'],['roundWin','circ','cx="150" cy="165" r="10"'],['ball','circ','cx="48" cy="62" r="16"']];
+  const cnt=[6,9,12][lv-1];let sel=TY.map(t=>R(A.filter(p=>p[1]==t)));sel=sel.concat(SH(A.filter(p=>!sel.includes(p))).slice(0,cnt-4));
+  const todo=new Set(sel.map(p=>p[0])),col={};let cur=pal[0];
+  const tg={tri:'polygon',sq:'rect',rect:'rect',circ:'circle'};
+  const d=()=>{el.innerHTML=`<div class="leg" style="font-size:20px;flex-wrap:wrap;gap:8px 16px">${TY.map(t=>`<div>${shp(t,'#94a3b8',32)}=${dot(M[t],26)}</div>`).join('')}</div><svg viewBox="0 0 300 260" style="width:min(100%,380px);border-radius:20px;background:#e0f2fe;touch-action:manipulation"><rect x="0" y="240" width="300" height="20" fill="#bbf7d0"/><path d="M150 48V28M150 28l16 6-16 6M62 98V80M62 80l14 5-14 5M238 98V80M238 80l14 5-14 5" stroke="#334155" stroke-width="3" fill="#ef4444" stroke-linejoin="round"/>${A.map(p=>`<${tg[p[1]]} data-p="${p[0]}" data-t="${p[1]}" ${p[2]} fill="${col[p[0]]||(todo.has(p[0])?'#fff':'#e2e8f0')}" stroke="#334155" stroke-width="3" stroke-linejoin="round" style="cursor:pointer"/>`).join('')}</svg><div class="pal" style="margin-top:10px">${pal.map(c=>`<button class="pc ${c==cur?'on':''}" data-c="${c}" style="background:${c}"></button>`).join('')}</div>`;
+   el.querySelectorAll('.pc').forEach(b=>b.onclick=()=>{cur=b.dataset.c;d()});
+   el.querySelectorAll('[data-p]').forEach(n=>n.onclick=()=>{const id=n.dataset.p;if(!todo.has(id)||col[id])return;if(M[n.dataset.t]==cur){col[id]=cur;beep(600,.08);d();if(Object.keys(col).length==todo.size)ans(true)}else ans(false)})};
+  qtxt='Warnai istana sesuai kode. '+TY.map(t=>K[t]+' '+CL[M[t]]).join(', ')+'. Pilih warna, lalu ketuk bagian istana yang bentuknya cocok!';d()}});
 function intro(k){const g=G[k];setTimeout(()=>say('Cara bermain '+g.t+'. '+H[g.id].join('. ')),150);view(`<div class="bar"><button class="bk" onclick="menu()">◀</button><b>${g.t}</b></div><div class="card" style="width:60%;margin:auto"><div class="th">${thumb(g,k)}</div></div><h2>📖 Cara Bermain</h2><ol class="how">${H[g.id].map(x=>`<li>${x}</li>`).join('')}</ol><p class="sub" style="text-align:center">${g.n} soal • Usia ${g.a[0]==g.a[1]?g.a[0]:g.a.join('–')} tahun</p><h2>🎚️ Pilih Level</h2>${[1,2,3].map(l=>`<button class="lv" onclick="go(${k},${l})"><b>Level ${l}</b> ${stars[g.id+l]?'★':'☆'}<small>${LV[g.id][l-1]}</small></button>`).join('')}`)}
 function run(k,lv=1){const g=G[k];let i=0,sc=0,mis=0;
  view(`<div class="bar"><button class="bk" onclick="menu()">◀</button><b>${g.t} · Lv ${lv}</b><span id="pg"></span><button class="bk" style="background:#f59e0b" onclick="say(LQ)">🔊</button></div><p class="ins">${g.i}</p><div id="st"></div>`);
