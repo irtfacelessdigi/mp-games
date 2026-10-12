@@ -43,113 +43,6 @@ h1{margin:6px 0 0;font-size:28px}.sub{margin:2px 0 12px;opacity:.75;font-weight:
 .empty{background:var(--card);color:var(--fg);border:3px dashed var(--bd);border-radius:20px;padding:20px;text-align:center;font-size:18px}
 #mdl{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:20;padding:20px}#mdl>div{background:var(--card);color:var(--fg);border:3px solid var(--bd);border-radius:24px;padding:20px;max-width:360px;text-align:center}
 .cmd u{text-decoration:none;background:#fde68a;color:#2b2350;border-radius:8px;padding:0 4px}
-
-/* ===== REVISI v6: Metamorfosis (pengantar + materi) dan 4 game dengan mekanisme terpisah ===== */
-.go:disabled{opacity:.45;cursor:not-allowed}
-.m6-btn{display:flex;align-items:center;gap:12px;width:100%;min-height:76px;border-radius:22px;border:3px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;font-size:21px;padding:12px 18px;text-align:left;box-shadow:0 5px 0 rgba(0,0,0,.12);margin:0 0 12px;cursor:pointer;touch-action:manipulation}
-.m6-btn .ic{font-size:38px;line-height:1}
-.m6-btn:active:not(:disabled){transform:scale(.97)}
-.m6-btn:focus-visible,.m6-cd:focus-visible,.m6-slot:focus-visible,.m6-act:focus-visible,.m6-op:focus-visible,.m6-sc:focus-visible{outline:4px solid #f59e0b;outline-offset:3px}
-.m6-btn.mat{background:#7c4dff;border-color:#6639e6;color:#fff}
-.m6-btn.pri{background:#22c55e;border-color:#16a34a;color:#fff}
-.m6-btn.sec{justify-content:center;font-size:18px;min-height:56px}
-.m6-btn.vid,.m6-btn.vid:disabled{background:#ebe6fb;color:#4a3f78;border:3px dashed #b5a8e8;box-shadow:none;cursor:not-allowed;opacity:1}
-.m6-btn.vid .clk{margin-left:auto;font-size:26px}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .m6-btn.vid,:root:not([data-theme="light"]) .m6-btn.vid:disabled{background:#3a3368;color:#e4deff;border-color:#6d62b3}}
-:root[data-theme="dark"] .m6-btn.vid,:root[data-theme="dark"] .m6-btn.vid:disabled{background:#3a3368;color:#e4deff;border-color:#6d62b3}
-.m6-hero{text-align:center}
-.m6-hero h1{margin:8px 0 2px;font-size:30px}
-.m6-art{display:flex;gap:10px;justify-content:center;align-items:center;margin:6px 0 4px}
-.m6-art svg{width:min(34vw,140px);height:auto;display:block;filter:drop-shadow(0 4px 0 rgba(0,0,0,.1))}
-.m6-art b{font-size:30px}
-.m6-tl{list-style:none;margin:0 0 12px;padding:0}
-.m6-sc{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--card);color:var(--fg);border:3px solid var(--bd);border-radius:20px;padding:10px;font:inherit;cursor:pointer;position:relative}
-.m6-sc .im{flex:none;width:96px}
-.m6-sc .im svg{width:100%;height:auto;display:block;border-radius:14px}
-.m6-sc b{display:block;font-size:20px;margin-bottom:2px}
-.m6-sc .tx span{display:block;font-size:16px;font-weight:600;opacity:.9;line-height:1.3}
-.m6-sc .no{position:absolute;top:-10px;left:-6px;width:30px;height:30px;border-radius:50%;background:var(--ac);color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
-.m6-ar{text-align:center;font-size:24px;line-height:1.1;margin:4px 0;color:var(--ac)}
-.m6-q{margin:2px 0 8px;font-size:22px}.m6-q small{font-size:15px;opacity:.75;font-weight:600}
-.m6-slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(64px,1fr));gap:12px 8px;width:100%;margin:6px 0 10px}
-.m6-slot-w{position:relative}
-.m6-slot-w .no{position:absolute;top:-9px;left:-3px;z-index:2;background:var(--ac);color:#fff;border-radius:50%;width:22px;height:22px;font-size:13px;display:flex;align-items:center;justify-content:center}
-.m6-slot{width:100%;min-height:104px;border:3px dashed var(--bd);border-radius:14px;background:rgba(255,255,255,.45);color:var(--fg);font:inherit;display:flex;align-items:center;justify-content:center;padding:2px}
-.m6-slot .m6-ph{font-size:26px;opacity:.35}
-.m6-slot.has{border-style:solid}
-.m6-slot.over{border-color:var(--ac);background:#ede9fe}
-.m6-slot.ok{border-color:#22c55e;background:#dcfce7}
-.m6-slot.bad{border-color:#ef4444;background:#fee2e2;animation:sk .4s}
-.m6-tray{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:8px;width:100%;margin:6px 0;padding:8px;border:3px dotted var(--bd);border-radius:16px;min-height:90px}
-.m6-tray[data-empty]{opacity:.55}
-.m6-cd{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-user-drag:none;cursor:grab;border:3px solid var(--bd);border-radius:14px;background:#fff;color:#2b2350;padding:3px;display:flex;flex-direction:column;align-items:center;font:inherit;width:100%}
-.m6-cd svg{width:100%;max-width:84px;height:auto;display:block;pointer-events:none}
-.m6-cd small{font-size:12px;line-height:1.1;text-align:center;margin-top:2px;pointer-events:none}
-.m6-cd.sel{outline:4px solid #f59e0b;transform:scale(1.05)}
-.m6-cd.drag{opacity:.3}
-.m6-slot .m6-cd{border:0;background:transparent;padding:0;cursor:pointer}
-.m6-ghost{position:fixed;z-index:60;pointer-events:none;width:88px;opacity:.92;transform:translate(-50%,-60%) rotate(5deg);filter:drop-shadow(0 8px 6px rgba(0,0,0,.25))}
-.m6-ghost svg{width:100%;height:auto;display:block}
-.m6-fb{margin:8px 0;padding:8px 12px;border-radius:14px;font-size:17px;line-height:1.35;min-height:44px;width:100%;background:#fff7e6;color:#2b2350;border:3px solid #fde68a;text-align:center}
-.m6-fb.good{background:#dcfce7;border-color:#22c55e}
-.m6-fb.bad{background:#fee2e2;border-color:#fca5a5}
-.m6-anim{width:100%;text-align:center;margin:4px 0}
-.m6-big{width:min(62vw,230px);margin:0 auto}
-.m6-big svg{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 5px 0 rgba(0,0,0,.12)}
-.m6-big.m6-in svg{animation:m6in .7s ease-out}
-@keyframes m6in{from{transform:scale(.6) rotate(-6deg);opacity:0}to{transform:none;opacity:1}}
-.m6-cap{display:block;font-size:22px;margin-top:6px}
-.m6-dsc{margin:2px 0 6px;font-size:17px;min-height:46px}
-.m6-strip{display:flex;align-items:center;justify-content:center;gap:2px;flex-wrap:wrap;margin:4px 0 8px}
-.m6-sm{width:54px;text-align:center;opacity:.55;transition:.25s;font-size:12px}
-.m6-sm svg{width:100%;height:auto;display:block}
-.m6-sm.on{opacity:1;transform:scale(1.15)}
-.m6-strip .ar{font-size:16px;opacity:.6}
-.m6-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;width:100%}
-.m6-sec{width:100%;text-align:left;margin:10px 0 4px;font-size:18px}
-.m6-sec small{opacity:.7;font-weight:600}
-.m6-tk{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;background:#fff;color:#2b2350;border:3px dashed #f59e0b;border-radius:18px;padding:8px 10px;margin-bottom:8px}
-.m6-tk .who{font-size:34px;line-height:1}
-.m6-tk .tkb{flex:1;font-size:16px}
-.m6-tk .tr{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;margin-top:4px}
-.m6-tk .k{font-weight:700;min-width:62px;opacity:.7}
-.m6-tk .prev{flex:none;width:84px}.m6-tk .prev svg{width:100%;height:auto;display:block}
-.m6-tag{display:inline-flex;align-items:center;gap:4px;background:#fef3c7;border:2px solid #fcd34d;border-radius:999px;padding:1px 8px;font-size:15px}
-.m6-tag.opt{background:#f1f5f9;border:2px dashed #94a3b8}
-.m6-tag.have{background:#bbf7d0;border-color:#22c55e}
-.m6-tag i.dot{width:14px;height:14px;display:inline-block;border-radius:50%;border:2px solid rgba(0,0,0,.25)}
-.m6-ice{width:min(52vw,200px);margin:4px auto}.m6-ice.big{width:min(62vw,240px)}
-.m6-ice svg,.m6-sw svg{width:100%;height:auto;display:block}
-.m6-opts{display:grid;gap:8px;width:100%}
-.m6-op{border:3px solid var(--bd);border-radius:16px;background:var(--card);color:var(--fg);font:inherit;font-size:16px;min-height:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px 6px;position:relative;touch-action:manipulation}
-.m6-op .e{font-size:28px;line-height:1}
-.m6-op svg{width:34px;height:34px}
-.m6-op.on{border-color:var(--ac);background:#ede9fe;color:#2b2350}
-.m6-op i.dot{width:30px;height:30px;display:block;border-radius:50%;border:3px solid rgba(0,0,0,.25)}
-.m6-op b.n{position:absolute;top:-8px;right:-6px;background:#ef4444;color:#fff;border-radius:50%;min-width:22px;height:22px;font-size:13px;display:flex;align-items:center;justify-content:center}
-.m6-prog{width:100%;height:14px;border-radius:999px;background:rgba(0,0,0,.12);overflow:hidden;margin:4px 0}
-.m6-prog>div{height:100%;background:#22c55e;border-radius:999px;transition:width .3s}
-.m6-pop{animation:m6pop .35s ease-out;transform-box:fill-box;transform-origin:50% 100%}
-@keyframes m6pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
-.m6-drop{animation:m6drop .35s ease-out}
-@keyframes m6drop{from{transform:translateY(-46px);opacity:0}to{transform:none;opacity:1}}
-.m6-scene{width:min(100%,360px);height:auto;display:block;margin:0 auto;border-radius:20px;box-shadow:0 5px 0 rgba(0,0,0,.12)}
-.m6-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0}
-.m6-chip{background:#fff;color:#2b2350;border:2px solid #fcd34d;border-radius:999px;padding:3px 10px;font-size:15px}
-.m6-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;margin:6px 0}
-.m6-act{border:3px solid var(--bd);border-radius:18px;background:var(--card);color:var(--fg);font:inherit;font-size:17px;min-height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:6px;touch-action:manipulation}
-.m6-act .e{font-size:30px;line-height:1}
-.m6-act:active:not(:disabled){transform:scale(.95)}
-.m6-act:disabled{opacity:.55}
-.m6-plant{transform-box:fill-box;transform-origin:50% 100%}
-.m6-grow{animation:m6grow .9s ease-out}
-@keyframes m6grow{from{transform:scale(.8)}60%{transform:scale(1.12)}to{transform:scale(1)}}
-.m6-shake{animation:sk .4s}
-.m6-wd{animation:m6wd 1s ease-in infinite}
-@keyframes m6wd{from{transform:translateY(-10px);opacity:0}30%{opacity:1}to{transform:translateY(46px);opacity:0}}
-.m6-sun{animation:m6sun 1.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-@keyframes m6sun{50%{transform:scale(1.15)}}
-@media(prefers-reduced-motion:reduce){.m6-big.m6-in svg,.m6-pop,.m6-drop,.m6-grow,.m6-wd,.m6-sun,.m6-shake,.m6-slot.bad{animation:none}}
 </style></head><body><div id="app"></div><div id="fl"></div>
 <script>
 const $=s=>document.querySelector(s),R=a=>a[Math.random()*a.length|0],SH=a=>[...a].sort(()=>Math.random()-.5);
@@ -616,13 +509,65 @@ G.push({id:'jalan',t:'Kode Jalan Sapi',a:[5,6],n:5,img:1,i:'Susun kode panah aga
    ans(false,msg);await sleep(700);if(!live())return;p=[0,0];busy=0;d()};
   qtxt='Susun perintah panah supaya sapi sampai ke kandang. Lalu tekan Jalankan!';d()}});
 
+/* ===== 4 Labirin Bergambar: kura-kura, angkasa, permen, dino =====
+   Jalan diambil dari bentuk gambar (mask 160x160). Jari harus tetap di atas jalan:
+   kalau keluar jalan, garis berhenti dan jari harus kembali ke titik merah.
+   Dengan begitu anak tidak bisa menembus tembok, dan boleh mencoba jalan buntu. */
+const MZ2={"mkura":{"n":160,"m":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfwAAAAAAAAAAAAAAAAAAAAAAAAP/4AAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAf//wAAAAAAAAAAAAAAAAAAAAAAD///gAAAAAAAAAAAAAAAAAAAAAAf///AAAAAAAAAAAAAAAAAAAAAAD///8AAAAAAAAAAAAAAAAAAAAAAP///4AAAAAAAAAAAAAAAAAAAAAB////gAAAAAAAAAAAAAAAAAAAAAH////AAAAAAAAAAAAAAAAAAAAAAf///8AAAAAAAAAAAH//4AAAAAAB////wAAAAAAAAAAB///4AAAAAAP////AAAAAAAAAAAP///wAAAAAA////8AAAAAAAAAAA////gAAAAAD////wPgAAAAAAAAH///+AAAAAAP////D/+AAAAAAAAf///8AAAAAAf///8//+AAAAAAAB////wAAAAAB////z//4AAAAAAAH////AAAAAAH////P//wAAAAAAAf///8AAAAAAf///4f//AAAAAAAB////wAAAAAA////h//+AAAAAAAH////AAAAAAD///8P//4AAAAAAA//B/8AAAAAAH///w///gAH//////4H/wAAAAAAP//+H//+AB///////gf/AAAAAAAf//////4AP//////+B/8AAAAAAA///////gA///////4H/wAAAAAAA//////+AH///////gf/AAAAAAAA//////4Af//////+B/8AAAAAAAB//////gB///////4H/wAAAAAAA3/////+AH///////Af/AAAAAAAD//////4Af//////8B/+AAAAAAAB//////gB///////AH////gAAAAD//8D/+AH//////gAf////gAAAAH+AAH/4A//h/wAAAB/////gAAAAOAAAP/wH/+H/AAAAH////+AAAAAAAAA/////wf8AAAAP////8AAAAAAAAD/////B/4AAAA/////wAAAAAAAAP////8H/wAAAD/////AAAAAAAAA/////wf/gAAAP////8AAAAAAAAD/////B/+AAAAf////wAAAD//8AP////8H/4AAAA/////AAAA///+A/////wf/gAAAA////8AAAD///8D////+B/+AAAAAAAP/wAAAP///4H////4H/4AAAAAAAf/AAAA////gP///+Af/gAAAAAAB/8AAAH////AAA//AB//AAAAAAAH/wAAAf///8AAAAAAH/8AAAAAAAf/AAAB////wAAAAAAf/wAAAAAAB/8AAAD////AAAAAAB//AAAAAAAH/wAAAP///8AAAAAAH/8AAAAAAAf/AAAB////wAAAAAAf/wAAAAAAB/8AAAD////AAAAAAB//AAAAAAAH/wAAAD///8AAAAAAH/8AAAAAAA//AAAAAAf/wAAAAAAf/wD///////8AAAAAA//AAAAAAB//A////////wAAAAAD/8AAAAAAH/8H////////AAAAAAP/wAAAAAAf/w////////8AAAAAA//AAAAAAB//D////////wAAAAAD/8AAAAAAH/8P////////AAAAAAP/wAAAAAAf/w////////8AAAAAA//AAAAAAB/+D////////gAAAAAD/8AAAAAAH/4P///////+AAAAAAP/wAAAAAAf/g////////wAAAAAA///////+f/+D///////8AAAAAAD//////////8P/4AAAAAAAAAAAAP//////////g//AAAAAAAAAAAAA//////////+D/4AAAAAAAAAAAAD//////////4P/gAAAAAAAAAAAAP//////////g/+AAAAAAAAAAAAA//////////+D/4AAAAAAAAAAAAB//////////4P/gAAAAAAAAAAAAH//////////A/+AAAAAAAAAAAAAP/////////4D/4AAAAAAAAAf8AAP/////////AP/gAAAAAAAAP/4AAAAAA//4AAAA/+AAAAAAAAB//gAAAAAB//AAAAD/4AAAAAAAAP/+AAAAAAD/4AAAAP/gAAAAAAAA//4AAAAAAP/gAAAA/+AAAAAAAAD//wAAAAAA/+AAAAD/4AAAAAAAAf//AAAAAAD/4AAAAP/gAAAAAAAB//4AAAAAAP/gAAAA/+AAAAAAAAH//gAAAAAA/+AAAAD/8AAAAAAAAf/+AAAAAAD/4AAAAP/wAAAAAAAB//wAAAAAAP/gAAAA//////gAAAH/+AAAAAAA/+AAAAD//////gAAAf/4AAAAAAD/4AAAAP/////+AAAB//gAAAAAAf/gAAAA//////8AAAH/+AAAAAAP/+AAAAD//////wAAAf/4AAAH////4AAAAP//////AAAB//gAAA/////gAAAA//////+AAAH/+AAAD////+AAAAD//////wAAAf/4AAAf////4AAAAH//////gAAB//gAAD/////gAAAAP/////+AAAH/+AAAP////+AAAAAP/////4AAAf/4AAA/////4AAAAAAAAB//gAAB//wAAD/////AAAAAAAAAD/+AAAH//AAAP////4AAAAAAAAAP/wAAAf///wA////+AAAAAAAAAA//AAAB////4D/+AAAAAAAAAAAAD/8AAAH////wP/wAAAAAB///wAAP/wAAAf////A//AAAAAA////4AA//AAAA////+D/8AAAAAP////wAD/8AAAD////4P/wAAAAA/////gAP/wAAAP////g//AAAAAH/////AA//AAAAf///+D/8AAAAAf////8AD/+AAAA////4P/wAAAAB/////wAP/4AAAAP///g//AAAAAH/////AA//AAAAAAB/+D/8AAAAAf////8AD/8AAAAAAD/4P/wAAAAB/////wAP/wAAAAAAP/g//AAAAAH/////AA//AAAAAAA/+D/8AAAAAf/4H/8AB/8AAAAAAD/4P/wAAAAD//AP/wAD/AAAAAAAP/g//wAAAAf/4A//AAAAAAAAAAA/+D/////////gD/8AAAAAAAAAAD/4P////////+AP/wAAAAAAAAAAP/g/////////4A//AAAAAAAAAAA/+D/////////gD/8AeAAAAAAAAD/4P////////+AP/wP4AAAAAAAAP/g/////////wA//B/gAAAAAAAA/+B/////////AD/8P/AAAAAAAAD/4H////////4AP/x/+AAAAAAAAP/gP////////AA/////4AAAAAAA/+Af////8AAAAD/////4AAAAAAD/4AP////gAAAAP/////wAAAAAAP/gAAAB/+AAAAA//////gAAAAAA/+AAAAH/4AAAAD//////AAAAAAD/4AAAAf/gAAAAP/////8AAAAAAP/gAAAB/+AAAAA//////wAAAAAA/+AAAAH/4AAAAD//////AAAAAAD/4AAAAf/gAAAAP//8f/8AAAAAAP/gAAAB/+AAAAAf//B//wAAAAAA/+AAAAH/4AAAAB//wD//AAAAAAD/4AAAAf/gAAAAB/+AP/4AAAAAAP/wAAAB/+AAAAAD/8Af/gAAAAAA//AAAAH/4AAAAAADgB/8AAAAAAD//AAAB//gAAAAAAGAB/AAAAAAAP///////+AAAAAAA4AAAAAAAAAA////////4AAAAAADwAAAAAAAAAD////////gAAAAAAfAAAAAAAAAAP///////+AAAAAAA4AAAAAAAAAA////////wAAAAAAAAAAAAAAAAAD////////AAAAAAAAAAAAAAAAAAH///////8AAAAAAAAAAAAAAAAAAf///////wAAAAAAAAAAAAAAAAAA///////+AAAAAAAAAAAAAAAAAAB///////wAAAAAAAAAAAAAAAAAAB//////4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=","S":[152,112],"sr":105,"G":[[791,783],[853,829]],"gr":55,"p":"159,214 196,205 234,205 270,192 306,184 328,214 335,251 364,272 402,274 440,272 464,245 476,209 510,196 547,199 558,233 560,271 570,306 571,344 571,382 569,420 548,449 510,455 472,455 435,462 421,495 421,533 421,571 399,599 361,604 323,606 291,624 287,661 287,699 288,737 316,760 354,762 392,764 429,772 465,761 503,758 540,754 566,730 577,694 611,680 649,679 685,689 698,723 699,761 703,798 731,818 768,809 791,783","img":"maze-kura.webp"},"mangkasa":{"n":160,"m":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/wAAAAAAAAAAAAAAAAAAAAAAAA//wAAAAAAAAAAAAAAAAAAAAAAAP//wAAAAAAAAAAAAAAAAAAAAAAB///gAAAAAAAAAAAAAAAAAAAAAAP///AAAAAAAAAAAAAAAAAAAAAAA///+AAAAAAAAAAAAAAAAAAAAAAH///4AAAAAAAAAAAAAAAAAAAAAA////wAAAAAAAAAAAAAAAAAAAAAD////AAAAAAAAAAAAAAAAAAAAAAP///+AAAAAAAAAAAAAAAAAAAAAB////4P/////AAAAAAAAAAAAAAAH////h//////AAAAAAAAAAAAAAAf///+H/////8AAAAAAAAAAAAAAB////4//////4AAAAAAAAAAAAAAH////n//////gAAAAAAAAAAAAAAf///+f/////+AAAAAAAAAAAAAAB////5//////4AAAAAAAAAAAAAAD////n//////gAAAAAAAAAAAAAB////8f/////+AAAAAAAAAAAAAAH////x//////4AAAAAAAAAAAAAA////+H/wAAf/gAAAAAAAAAAAAAD////4f+AAA/+AAAAAAAAAAAAAAf////z/4AAB/4AAAB////+AAAAD///////AAAH/gAAA//////AAAAP//////8AAAf+AAAP//////AAAA/8/////wAAB/4AAA//////8AAAH/g/8H//AAAH/gAAH//////4AAAf/AHH//8AAAf+AAAf//////gAAA///////wAAB/4AAB//////+AAAD///////AAAH/gAAH//////4AAAH//////8AAAf+AAAf//////gAAAf//////wAAB/4AAB//////+AAAA///////AAAH/gAAH/8AAP/4AAAD//////8AAAf/AAA//AAAP/gAAAH//////wAAB//////8AAA/+AAAAD////f/AAAH//////wAAB/4AAAAB//4A/8AAAf//////AAAH/gAAAAAAAAD/wAAB//////8AAAf+AAAAAAAAAP/AAAH//////wAAB/4AAAAAAAAA/8AAAf/////+AAAH/gAAAAAAAAD/wAAB//////4AAA/+AAAAAAAAAP/AAAH//////gAAD/4AAAAAAAAA/8AAAP/////8AAAH/gAAAAAAAAD/4AAAf/////gAAAf+AAAAAAAAAP/gAAAP////wAAAB/4AAAAAAAAA//gAAAAAAAAAAAAH/gAAAAAAAAD////gAAAAAAAAAAf+AAAAAAAAAP////gAAAAAAAAAB/8AAAAAAAAA////+AAAAAAAAAAH/4AAAAAAAAD////8AAAAAAAAAAf//8AAAAAAAP////wAAAAAAAAAB///8AAAAAAA/////AAAAAAAAAAH///wAAAAAAB////8AAAAAAAAAAf///gAAAAAAD////wAAAAAAAAAB///+AAAAAAAH////AAAAAAAAAAP///4AAAAAAAAAD/8AAAAAAAAAB////gAAAAAAAAAH/wAAAAD////////+AAAAAAAAAAf/AAAAB/////////4AAAAAAAAAB/8AAAAH/////////gAD/////gAH/wAAAA///////g/+AAf/////AAf/AAAAD//////+B/4AD/////8AB/8AAAAP//////wH/gAf/////4AH/wAAAB///////Af+AB//////gAf/AAAAH//////4B/4AH/////+AB/8AAAAf//////AH/gAf/////4AH/wAAAB//wAAAAAf+AB//////AAf/AAAAH/4AAAAAB/4AP/////4AB/8AAAAf/AAAAAAH/gA/////+AAH/wAAAB/8AAAAAAf+AD/+AAAAAAf/gAAAH/wAAAAAB/4AP/wAAAAAB/////9//AAAAAAH/gA/+AAAAAAH///////8AAAAAAf+AD/4AAAAAAf///////wAAAAAB/4AP/gAAAAAB////////AAAAAAH/gA/+AAAAAAH///////8AAAAAAf+AD/4AAAAAAf///////wAAAAAB/4AP/gAAAAAA////////AAAAAAH/gA/+AAAAAAD///////8AAAAAAf+AD/4AAAAAAH///////wAAAAAB/4AH/gAAAAAAP///////AAAAAAH/gAf+AAAAAAAD//////8AAAAAAf+AB/4AAAAAAAAAAAAP/wAAAAAB/4AH/gAAAAAAAAAAAAf/AAAAAAH/gAf+AAAAAAAAAAAAB/8AAAAAA/+AB/4AAAAAAAAAAAAH/wAAAAAH/4AH/gAAAAAAAAAAAAf/AAAAP///gA//AAAAAAAAAAAAB/8AAAH///+AD/8AAAAAAAAAAAAH/wAAA////4AH///+AAAAAAAAAAf/AAAD////gAf////AAAAAAAAAB/8AAAf///+AB////+AAAAAAAAAH/wAAB////4AH////4AAAAAAAAAf/AAAH////AAf////wAAAAAAAAB/8AAAf///8AB/////AAAAAAAAAH/wAAB////gAH////8AAAAAAAAAf/AAAH///4AAf////wAAAAAAAAB/8AAAf/wAAAA/////AAAAAAAAAH/wAAB/+AAAAB////8AAAAAAAAAf/AAAH/wAAAAAf///wAAAAAAAAB/8AAAf/AAAAAAAA//AAAAAAAAAH/wAAB/8AAAAAAAB/8AAAAAAAAAf/AAAH/wAAAAAAAH/wAAAAAAAAD/8AAAf/AAAAAAAAf/AAAAAAAAAP/wAAB/8AAAAAAAB/8AAAAAA/////AAAH/wAAAAAAAH/wAAAAAf////8AAAf/AAAAAAAAf/AAAAAD/////wAAD/8AAAAAAAB/8AAAAAf/////AAAP/wAAAAAAAH/wAAAAB/////4Af//+AAAAAAAAf/AAAAAP/////gP///wAAAAAAAB/8AAAAA/////+B///+AAAAAAAAH/4AAAAD/////wP///wAAAAAAAAf/wAAAAP////+A////AAAAAAAAB/////4A/////gH///+AAAAAAAAH/////4D/+AAAAf///4AAAAAAAAf/////gP/wAAAB////wAAAAAAAB//////A/+AAAAH////AAAAAAAAH/////8D/4AAAAf///+AAAAAAAAf/////wP/gAAAB//B/4AAAAAAAA//////A/+AAAAH/4D/wAAAAAAAD/////8D/4AAAAf/AP/AAAAAAAAH/////wP/gAAAB/8Af+AAAAAAAAH/////A/+AAAAH/wB/4AAAAAAAAAAAD/8D/4AAAAf/AD/wAAAAAAAAAAAH/wP/gAAAB/8AP/AAAAAAAAAAAAf/A/+AAAAH/wAf+AAAAAAAAAAAB/8D/4AAAAf/AB/+AAAAAAAAAAAH/wH/gAAAB/8AD/8AAAAAAAAAAAf/Af8AAAAH/wAP/4AAAAAAAAAAB/8AOAAAAAf/AA//wAAAAAAAAAAH/wAAAAAAB/8AD//AAAAAAAAAAAf/AAAAAAAH/wAP/+AAAAAAAAAAB/+AAAAAAAf/AA//4AAAAAAAAAAH/4AAAAAAD/8AD//gAAAAAAAAAAf//////////wAP/+AAAAAAAAAAB///////////AA//wAAAAAAAAAAH//////////8AD//AAAAAAAAAAAf//////////wAH/8AAAAAAAAAAB//////////+AAP/gAAAAAAAAAAH//////////gAAf8AAAAAAAAAAAP/////////8AAAeAAAAAAAAAAAA//////////wAAAAAAAAAAAAAAAB/////////+AAAAAAAAAAAAAAAAD/////////wAAAAAAAAAAAAAAAAB////////+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=","S":[144,128],"sr":105,"G":[[804,732],[869,869]],"gr":55,"p":"73,179 49,204 62,237 97,246 135,246 173,245 211,240 246,227 269,198 276,161 302,137 340,136 378,136 416,136 451,148 461,183 461,221 463,259 487,286 525,289 563,289 601,289 637,281 652,247 674,218 711,214 749,214 787,214 825,218 848,246 848,284 848,322 854,359 885,377 922,386 936,420 936,458 936,496 936,534 936,572 914,601 877,606 841,617 828,651 827,689 811,723 804,732","img":"maze-angkasa.webp"},"mpermen":{"n":160,"m":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/gAAAAAAAAAAAAAAAAAAAAAAAAP/wAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAf//gAAAAAAAAAAAAAAAAAAAAAAD///AAAAAAAAAAAAAAAAAAAAAAAf//+AAAAAAAAAAAAAAAAAAAAAAD///8AAAAAAAAAH////wAAAAAAAf///wAAAAAAAAB/////gAAAAAAB////gAAAAAAAAP/////AAAAAAAH///+AAAAAAAAA/////8AAAAAAA////4GAAAAAAAD/////4AAAAAAD////wcAAAAAAAf/////gAAAAAAP////B/8AAAAAB/////+AAAAAAA////8H/4AAAAAH/////4AAAAAAD////wf/wAAAAAf/////gAAAAAAP////B//AAAAAB/////+AAAAAAA////8P/8AAAAAH/8AP/4AAAAAAD////h//wAAAAAf/gAf/gAAAAAA////////AAAAAB/8AB/+AAAAAAP///////+AAAAAH/wAH/4AAAAAB////////4AAAAA//AAf/gAAAAAH///////////////8AB/+AAAAAAf///////////////wAH/4AAAAAB////////////////AAf/gAAAAAH///////////////8AB/+AAAAAAP///////////////wAH/4AAAAAAD///////////////AAf/wAAAAAAH//////////////8AB//gAAAAAAf//////////////gAH/////4AAB//////////////8AAf/////wAAD//////////////gAB//////gAAD///+AAAf//AAAAAAH//////AAAD///gAAAf/wAAAAAAf/////8AAAAP8AAAAB//AAAAAAA//////wAAAAAAAAAAH/4AAAAAAD//////gAAAAAAAAAAf/gAAAAAAP/////+AAAAAAAAAAB/+AAAAAAAf/////4AAAAAAAAAAH/4AAAAAAA//////gAAAAAAAAAAf/gAAAAAAAAAAf/+AAAAAAAAAAB/+AAAAAAAAAAAf/4AAAAAAAAAAH/4AAAAAAAAAAB//gAAAAAAAAAAf/gAAAAAAAAAAD/+AAAAAAAAAAB/+AAAAAAAAAAAP/4AAAAAAAAAAH/4AAAAAAAAAAA//gAAAAAAAAAAf/gAAAAAAAAAAD/+AAAAAAAAAAB/+AAAAAAAAAAAP/4AAAAAAAAAAH/4AAAAAAAAAAB//gAAAAAAAAAAf/gAAAAAAAAAAH/+AAAAAAAAAAB/+AAAAAAAAAAB//4AAAAAAAAAAH/4AAAAB////////gAAAAAAAAAAf/gAAAB////////+AAAAAAAAAAD/+AAAAP////////wAAAAAAH/////4AAAB/////////AAAAAAD//////gAAAH////////8AAAAAAf/////+AAAA/////////wAAAAAD//////4AAAD////////+AAAAAAP//////gAAAP////////wAAAAAB//////+AAAA///////D+AAAAAAH//////4AAAD//////gDgAAAAAAf//////AAAAP/////8AAAAAAAAB//////8AAAA//wAAAAAAAAAAAAH//////gAAAD/+AAAAAAAAAAAAAf/////wAAAAP/4AAAAAAAAAAAAB//AAAAAAAAA//AAAAAAAAAAAAAH/4AAAAAAAAD/8AAAAAAAAAAAAAf/gAAAAAAAAP/wAAAAAAAAAAAAB/8AAAAAAAAA//AAAAAAAAAAAAAH/wAAAAAAAAD/8AAAAAAAAAAAAAf/AAAAAAAAAf/wAAAAAAAAAAAAB/8AAAB///////AAAAAAAAAAAAAH/wAAA///////8AAAAAAAAAAAAAf/AAAP///////wAAAAAAAAAAAAB/8AAA////////AAAAAAAAAAAAAH/wAAH///////8AAAAAAAAAAAAAf/AAAf///////wAAAAAAAAAAAAB/8AAD////////AAAAAAAAAAAAAH/wAAP///////8AAAAAAAAAAAAAf/AAA////////gAAAAAAAAAAAAB/8AAD///////8AAAAAAAAAAAAAH/wAAP///////AAAAAAAAAAAAAAf/AAA//wAAAAAAAAAAAAAAAAAAB/8AAD/+AAAAAAAAAAAAAAAAAAAP/wAAP/4AAAAAAAAAAAAAAAAAAA//AAA//gAAAAAAAAAAAAAAAAA///8AAD/8AAAAAAAAAAAAAAAAAf///wAAP/wAAAAAAAAAAAAAAAAH////AAA//gAAAAAAAAAAAAAAAA////8AAD/+AAAAAAAAAAAAAAAAD////wAAP/wAAAAAAAAAAAAAAAAf////AAA//AAAAAAAAAAAAAAAAB////8AAD/8AAAAAAAAAAAAAAAAH////gAAP/wAAAAAAAAAAAAAAAAf///8AAA//AAAAAAAAAAAAAAAAB////gAAD/+AAAAAAAAAAAAAAAAH///4AAAP/4AAAAAAAAAAAAAAAAf/wAAAAA//wAAAAAAAAAAAAAAAB//AAAAAD//////8AAAAAAAAAAAH/4AAAAAP///////AAAAAAAAAAAf/gAAAAA///////+AAAAAAAAAAB/+AAAAAD///////8AAAAAAAAAAH/4AAAAAP///////wAAAAAAAAAAf/gAAAAA////////gAAAAAAAAAB/+AAAAAB///////+AAAAAAAAAAH/4AAAAAH///////4AAAAAAAAAAf/gAAAAAP///////gAAAAAAAAAB/+AAAAAAf//////+AAAAAAAAAAH/4AAAAAAf//////4AAAAAAAAAAf/gAAAAAAAAAAB//gAAAAAAAAAB/+AAAAAAAAAAAD/+AAAAAAAAAAH/4AAAAAAAAAAAH/4AAAAAAAAAAf/gAAAAAAAAAAAf/gAAAAAAAAAB//AAAAAAAAAAAB/+AAAAAAAAAAH/8AAAAAAAAAAAH/4AAAAAAAAAAf///////+AAAAAf/gAAAAAAAAAB/////////AAAAB/+AAAAAAAAAAH////////+AAAAH/4AAAAAAAAAAf////////4AAAAf/gAAAAAAAAAB/////////wAAAB/+AAAAAAAAAAH/////////AAAAH/4AAAAAAAAAAP////////8AAAAf/gAB/AAAAAAA/////////wAAAB/+AAf+AAAAAAA/////////AAAAH/4AD/8AAAAAAA////////8AAAAf/v///4AAAAAAAP///////wAAAD//////wAAAAAAAAAAAAD//AAAAP//////AAAAAAAAAAAAAH/8AAAB//////8AAAAAAAAAAAAAf/wAAAH//////wAAAAAAAAAAAAB//AAAAf//////AAAAAAAAAAAAAH/8AAAB//////8AAAAAAAAAAAAAf/wAAAD//////gAAAAAAAAAAAAB//gAAAP/////+AAAAAAAAAAAAAH//AAAAP/wAH/wAAAAAAAAAAAAAf/////AAAAAP+AAAAAAAAAAAAAB/////+AAAAAPgAAAAAAAAAAAAAH/////wAAAAAAAAAAAAAAAAAAAAf/////AAAAAAAAAAAAAAAAAAAAB/////+AAAAAAAAAAAAAAAAAAAAD/////8AAAAAAAAAAAAAAAAAAAAP/////+AAAAAAAAAAAAAAAAAAAA//////4AAAAAAAAAAAAAAAAAAAB//////AAAAAAAAAAAAAAAAAAAAD/////8AAAAAAAAAAAAAAAAAAAAD/////gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=","S":[136,144],"sr":105,"G":[[609,853],[789,845]],"gr":55,"p":"85,171 73,203 95,233 132,238 170,238 208,233 240,214 276,203 313,210 349,219 387,226 424,229 460,220 498,220 536,220 573,213 591,181 597,144 628,125 666,123 703,125 736,140 743,177 744,215 756,250 791,262 829,262 867,263 901,277 912,312 912,350 892,380 856,389 818,396 780,397 742,397 704,397 667,401 641,426 640,464 633,501 602,521 564,522 526,522 488,522 450,523 414,535 402,569 402,607 402,645 416,679 451,691 489,691 527,691 565,691 603,695 629,721 630,759 630,797 617,831 609,853","img":"maze-permen.webp"},"mdino":{"n":160,"m":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAAAAAAAAAAAB/8AAAAAAAAAAAAAAAAAAAAAAAAf/8AAAAAAAAAAAAAAAAAAAAAAAD//8AAAAAAAAAAAAAAAAAAAAAAAf//4AAAAAAAAAAAAAAAAAAAAAAD///wAAAAAAAAAAAAAAAAAAAAAAf///gAAAAAAAAAAAAAAAAAAAAAB///+AAAAAAAAAAAAAAAAAAAAAAP///8AAAAAAAAAAAAAAAAAAAAAA////wQAAAAAAAAAAAAAAAAAAAAH////P/+AAAAAAAAAAAAAAAAAAAf//////+AAAAAAAAAAAAAAAAAAB///////4AAAAAAAAAAAAAAAAAAH///////wAAAAAAAAAAAAAAAAAAf///////AAAAAAAAAAAAAAAAAAB///////8AAAAAAAAAAAAAAAAAAH///////wAAAAAAAAAAAAAAAAAAf///////AAAAAAAAAAAAAAAAAAA///////8AAAAAAAAAAAAAAAAAAD///////wAA////4AAAAAAAAAAAP////5//AAf////4AAAAAAAAAAAf///+B/8AD/////wAAAAAAAAAAB////gH/wAP/////AAAAAAAAAAAD///4Af/AB/////+AAAAAAAAAAAH//+AB/8AH/////4AAAAAAAAAAAP//wAD/wAf/////gAAAAAAAAAAAP/8AAP/AB/////+AAAAAAAAAAAAP/AAA/8AH/////4AAAAAAAAAAAAAAAAD/wAf/////gAAAAAAAAAAAAAAAAP/AB/+AB/+AAAAAAAAAAAAAAAAA/8AH/wAD/4AAAAAAAAAAAAAAAAD/wAf/AAP/gAAAAAAAAAAAAAAAAP/gD/4AA/+AAAAAAAAAAAAAAAAA/+AP/gAD/8AAAAAAAAAAAAAAAAH////+AAP//zZw/AAAAAAAAAAAAf////4AA////////8AAAAA/lAAB/////gAD////////8AAAAf//wAH////+AAP////////4AAAB///wAP////4AA/////////gAAAH///AA/////gAD////////+AAAA///+AD////+AAH////////8AAAD///wAP////4AAf////////wAAAP///AAf////AAB/////////AAAA///+AA////4AAD////////8AAAD///4AA///8AAAD////////wAAAP///gAAAAAAAAAAAAAAAB//AAAAf//+AAAAAAAAAAAAAAAAD/8AAAAAH/4AAAAAAAAAAAAAAAAP/wAAAAAP/gAAAAAAAAAAAAAAAA//AAAAAA/+AAAAAAAAAAAAAAAAD/8AAAAAD/4AAAAAAAAAAAAAAAAP/wAAAAAP/gAAAAAAAAAAAAAAAA//AAAAAA/+AAAAAAAAAAAAAAAAD/8AAAAAD/4AAAAAAAAAAAAAAAAP/wAAAAAP/gAAAAAAAAAAAAAAAA//AAAAAA/+AAAAAAAAAAAAAAAAD/8AAAAAD/8AAAAAAAAAAAAAAAAP/wAAAAAP/wAAAAAAAAAAAAAAAA//AAAAAA////8AAAAAAAAAAAAAD/8AAAAAD////8AAAAAAAAAAAAAP/wAAAAAP////4AAAAAAAAAAAAA//AAAAAAf////gAAAAAAAAAAAAD/8AAAAAB/////AAAAAAAAAAAAAP/wAAAAAH////8AAAAAAAAAAAAB//AAAAAAf////wAAAAAAH///////8AAAAAB/////AAAAAAB////////wAAAAAD////8AAAAAAP////////AAAAAAH////wAAAAAB////////8AAAAAAAAD//AAAAAAH////////wAAAAAAAAD/8AAAAAAf///////+AAAAAAAAAH/wAAAAAB////////4AAAAAAAAAf/AAAAAAH////////gAAAAAAAAB/8AAAAAAf///////4AAAAAAAAAH/wAAAAAB////////AAAAAAAAAA//AAAAAAH//4B530AAAAAAAAAAD/8AAAAAAf/gAAAAAAAAAAAAAAAP/wAAAAAB/8AAAAAAAAAAAAAAAA//AAAAAAH/wAAAAAAAAAAAAAAAB/8AAAAAAf/AAAAAAAAAAAAAAAAH/4AAAAAB/8AAAAAAAAAAAAAAAAf/wAAAAAH/wAAAAAAAAAAAAAAAB//////8Af/AAAAAAAAAAAAAAAAH//////8B/8AAAAAAAAAAAAAAAAf//////4H/wAAAAAAAAAAAAAAAB///////gf/AAAAAAAAAAAAAAAAH///////B/8AAAAAAAAAAAAAAAAf//////8H/wAAAAAAAAAAAAAAAB///////wf/AAAAAAAAAAAAAAAAD///////B/8AAAAAAAAAAAAAAAAH//////8H/wAAAAAAAAAAAAAAAAP//////wf/AAAAAAAAAAAAAAAAAD/c+///B/8AAAAAAAAAAAAAAAAAAAAAD/8H/9gAAAAAAAAAAAAAAAAAAAAP/wf////AAAAAAAAAAAAAAAAAAA//B////+AAAAAAAAAAAAAAAAAAD/8H////8AAAAAAAAAAAAAAAAAAP/wf////wAAAAAAAAAAAAAAAAAA//D/////gAAAAAAAAAAAAAAAAAD/8P////+AAAAAAAAAAAAAAAAAAP/wf////4AAAAAAAAAAAAAAAAAA//B/////gAAAAAAAAAAAAAAAAAD/8B////+AAAAAAAAAAAAAAAAAAP/wB////4AAAAAAAAAAAAAAAAAA//AAAA//gAAAAAAAAAAAAAAAAAD/8AAAB/+AAAAAAAAAAAAAAAAAAP/wAAAH/4AAAAAAAAAAAAAAAAAA//AAAAf/wAAAAAAAAAAAAAAAAAD/8AAAB//AAAAAAAAAAAAAAAAAAP/wAAAH/+AAAAAAAAAAAAAAAAAA//AAAAf/4AAAAAAAAAAAAAAAAAH/8AAABz/wAAAAAAAAAAAAAAD////wAAAGP/+AAAAAAAAAAAAAA/////AAAAYf/8AAAAAAAAAAAAAH////8AAABx//wAAAAAAAAAAAAAf////wAAAGD//gAAAAAAAAAAAAD/////AAAAAH/+AAAAAAAAAAAAAP////8AAAAAf/wAAAAAAAAAAAAA/////wAAAAA//gAAAAAAAAAAAAD////+AAAAAD//AAAAAAAAAAAAAP////4AAAAAf/8YAAAAAAAAAAAA////+AAAAAB//7wAAAAAAAAAAAD//AAAAAAAAP///gAAAAAAAAAAAP/wAAAAAAAB///+AAAAAAAAAAAA//AAAAAAAAH///4AAAAAAAAAAAH/4AAAAAAAAP//9gAAAAAAAAAAAP/gAAAAAAAAf//AAAAAAAAAAAAA/+AAAAAAAAA//8AAAAAAAAAAAAD/4AAAAAAAAD//wAAAAAAAAAAAAP/gAAAAAAAAP//AAAAAAAAAAAAA/+AAAAAAAAA/+eAAAAAAAAAAAAD/4AAAAAAAAHwB8AAAAAAAAAAAAf/gAAAAAAAA+AHgAAAAAAAAAAAB/+AAAAAAAABwAAAAAAAAAAAAAD//4AAAAAAAAAAAAAAAAAAAD//////gAAAAAAAAAAAAAAAAAAAf/////+AAAAAAAAAAAAAAAAAAAB//////4AAAAAAAAAAAAAAAAAAAH//////gAAAAAAAAAAAAAAAAAAAP/////+AAAAAAAAAAAAAAAAAAAA//////4AAAAAAAAAAAAAAAAAAAH//////gAAAAAAAAAAAAAAAAAAAP/////8AAAAAAAAAAAAAAAAAAAAf/////gAAAAAAAAAAAAAAAAAAAA/////8AAAAAAAAAAAAAAAAAAAABAQDxgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=","S":[167,152],"sr":105,"G":[[794,729],[845,829]],"gr":55,"p":"225,187 258,170 292,156 328,165 341,199 341,237 344,275 364,305 401,309 439,307 470,288 475,251 493,219 530,212 568,212 606,215 632,239 637,276 657,306 695,311 733,311 771,311 809,311 847,311 884,314 910,340 912,378 912,416 911,454 895,487 859,496 821,496 783,496 745,496 707,496 670,502 651,533 651,571 651,609 652,647 680,670 718,673 756,677 779,705 794,729","img":"maze-dino.webp"}};
+const MZD='gambar%20mockup%20menu/';
+const mazeGame=(id,t,ch,goalName,pathName,hint)=>{
+ H[id]=['Lihat '+ch+' dan '+goalName+' di gambar.','Letakkan jarimu di '+ch+', lalu seret pelan-pelan mengikuti '+pathName+'.','Kalau jarimu keluar jalan, garis berhenti. Kembali ke titik merah lalu lanjutkan!','Sampai di '+goalName+', kamu menang!'];
+ LV[id]=['Ada titik-titik penunjuk jalan','Tanpa penunjuk, ikuti '+pathName,'Tanpa penunjuk, soal kedua gambarnya terbalik'];
+ G.push({id,t,a:[5,6],n:2,img:1,i:'Seret jarimu dari '+ch+' mengikuti '+pathName+' sampai ke '+goalName+'!',
+  th:`<img src="${MZD}${MZ2[id].img}" alt="" onerror="this.outerHTML='<div style=font-size:70px>${hint}</div>'">`,
+  r(el,ans,i,lv){
+   const D=MZ2[id],N=D.n,bits=atob(D.m);let M=new Uint8Array(N*N);
+   for(let j=0;j<N*N;j++)M[j]=(bits.charCodeAt(j>>3)>>(7-(j&7)))&1;
+   if(lv==1){const O=new Uint8Array(N*N);for(let r=0;r<N;r++)for(let c=0;c<N;c++)if(M[r*N+c])for(let a=-1;a<=1;a++)for(let b=-1;b<=1;b++){const rr=r+a,cc=c+b;if(rr>=0&&rr<N&&cc>=0&&cc<N)O[rr*N+cc]=1}M=O}
+   const fx=i==1?1:0,fy=i==1&&lv==3?1:0,tx=x=>fx?1000-x:x,ty=y=>fy?1000-y:y,S=D.S;
+   const P=D.p.split(' ').map(q=>q.split(',').map(Number));
+   const gd=lv==1?`<polyline points="${P.map(q=>tx(q[0])+','+ty(q[1])).join(' ')}" fill="none" stroke="#7c4dff" stroke-width="12" stroke-linecap="round" stroke-dasharray="1 26" opacity=".8"/>`:'';
+   el.innerHTML=`<div id="mz" style="position:relative;width:min(100%,520px);aspect-ratio:1;margin:auto;touch-action:none;border-radius:20px;overflow:hidden;box-shadow:0 4px 0 rgba(0,0,0,.12)"><img src="${MZD}${D.img}" alt="" draggable="false" onerror="flash('Gambar ${D.img} tidak ditemukan',5000)" style="width:100%;height:100%;display:block;pointer-events:none;transform:scale(${fx?-1:1},${fy?-1:1})"><svg viewBox="0 0 1000 1000" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">${gd}<polyline id="tr" fill="none" stroke="#ec4899" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/><circle id="hd" r="20" fill="#ec4899" stroke="#fff" stroke-width="5" style="display:none"/><circle id="rg" cx="${tx(S[0])}" cy="${ty(S[1])}" r="60" fill="none" stroke="#7c4dff" stroke-width="8"><animate attributeName="r" values="55;80;55" dur="1.3s" repeatCount="indefinite"/></circle></svg></div>`;
+   qtxt='Seret jarimu dari '+ch+' mengikuti '+pathName+' sampai ke '+goalName+'!';
+   const z=$('#mz'),tr=$('#tr'),rg=$('#rg'),hd=$('#hd');
+   let pts=[],dr=0,fp=null,lv0=null,frozen=0,warnAt=0;
+   const at=e=>{const b=z.getBoundingClientRect();return[(e.clientX-b.left)/b.width,(e.clientY-b.top)/b.height]};
+   const on=(nx,ny)=>{const c=Math.floor((fx?1-nx:nx)*N),r=Math.floor((fy?1-ny:ny)*N);return c>=0&&c<N&&r>=0&&r<N&&M[r*N+c]==1};
+   const dist=(nx,ny,x,y)=>Math.hypot(nx*1000-tx(x),ny*1000-ty(y));
+   const draw=()=>{tr.setAttribute('points',pts.map(p=>(p[0]*1000|0)+','+(p[1]*1000|0)).join(' '));
+    if(lv0){hd.style.display='';hd.setAttribute('cx',lv0[0]*1000);hd.setAttribute('cy',lv0[1]*1000);hd.setAttribute('fill',frozen?'#ef4444':'#ec4899')}else hd.style.display='none'};
+   const reset=()=>{dr=0;fp=null;lv0=null;frozen=0;pts=[];draw();rg.style.display=''};
+   const win=(x,y)=>D.G.some(g=>dist(x,y,g[0],g[1])<D.gr);
+   /* satu langkah kecil dari jari; false = permainan selesai */
+   const step=(x,y)=>{
+    if(on(x,y)){
+     if(frozen){if(Math.hypot((x-lv0[0])*1000,(y-lv0[1])*1000)>34)return true;frozen=0}
+     const q=pts[pts.length-1];if(!q||Math.hypot(x-q[0],y-q[1])>.006)pts.push([x,y]);lv0=[x,y];
+     if(win(x,y)){dr=2;draw();ans(true);return false}
+    }else if(!frozen){frozen=1;const n=Date.now();if(n-warnAt>2500){warnAt=n;flash('Keluar jalan! Kembali ke titik merah 🔴',1400)}}
+    return true};
+   z.onpointerdown=e=>{if(dr==2)return;e.preventDefault();const[x,y]=at(e);
+    if(dist(x,y,S[0],S[1])>D.sr){flash('Mulai dari '+ch+' ya! ✋',1200);return}
+    z.setPointerCapture(e.pointerId);dr=1;pts=[];frozen=0;lv0=null;fp=[x,y];rg.style.display='none';
+    if(step(x,y))draw()};
+   z.onpointermove=e=>{if(dr!=1)return;const[x,y]=at(e),n=Math.max(1,Math.ceil(Math.hypot(x-fp[0],y-fp[1])/.003));
+    for(let j=1;j<=n;j++)if(!step(fp[0]+(x-fp[0])*j/n,fp[1]+(y-fp[1])*j/n)){draw();return}
+    fp=[x,y];draw()};
+   z.onpointerup=z.onpointercancel=()=>{if(dr==1)reset()};
+  }});
+};
+mazeGame('mkura','Labirin Kura-kura','kura-kura 🐢','peti harta karun 💰','jalan pasir','🐢💰');
+mazeGame('mangkasa','Labirin Astronot','astronot 🧑‍🚀','roket 🚀','jalan di angkasa','🧑‍🚀🚀');
+mazeGame('mpermen','Labirin Kue Jahe','kue jahe 🍪','rumah permen 🏠','jalan manis','🍪🏠');
+mazeGame('mdino','Labirin Dino','dino 🦖','sarang telur 🥚','jalan tanah','🦖🥚');
+
 /* ===== Kategori menu utama (setiap ID game dipetakan eksplisit) ===== */
 const CATS=[
 {id:'warna',t:'Coding Warna',ic:'🎨',c:'#f472b6',d:'Kode dan pencocokan warna',g:['beda','panah','salin','bentuk','istana']},
 {id:'pola',t:'Coding Pola &amp; Logika',ic:'🧩',c:'#60a5fa',d:'Pola, urutan, dan ulangan',g:['pola','susun','cermin','hilang','ulang','sandi','urut','kupu','siram','es','lampu','lbeda','lsama']},
 {id:'huruf',t:'Coding Huruf',ic:'🔤',c:'#34d399',d:'Simbol jadi huruf dan kata',g:['huruf','kata']},
 {id:'angka',t:'Coding Angka',ic:'🔢',c:'#fbbf24',d:'Kode angka dan berhitung',g:['angka']},
-{id:'maze',t:'Coding Maze',ic:'🐄',c:'#a78bfa',d:'Arah dan jalan ke tujuan',g:['jalan','labirin']}];
+{id:'maze',t:'Coding Maze',ic:'🐄',c:'#a78bfa',d:'Arah dan jalan ke tujuan',g:['jalan','labirin','mkura','mangkasa','mpermen','mdino']}];
 const GCAT={},catOf=id=>CATS.find(c=>c.id==id);
 CATS.forEach(ct=>ct.g.forEach(id=>{GCAT[id]=ct.id}));
 {const un=G.filter(g=>!GCAT[g.id]);if(un.length){console.warn('Game belum dipetakan ke kategori, ditaruh di Pola & Logika:',un.map(g=>g.id));un.forEach(g=>{GCAT[g.id]='pola';catOf('pola').g.push(g.id)})}}
@@ -718,463 +663,6 @@ function run(k,lv=1){const g=G[k],tok=++runSeq,rid=g.id+'.L'+lv+'.'+tok;curRun=t
   if(i>=g.n){const s=sc/g.n>=.8?3:sc/g.n>=.5?2:1,bonus=SCORE.completeLevel(g.id,lv,{runId:rid,total:g.n,stars:s}),rp=SCORE.runPoints(rid);stars[g.id+lv]=Math.max(stars[g.id+lv]||0,s);say('Kamu hebat! Kamu dapat '+s+' bintang!');
    view(`<div class="fin"><div class="s">${'★'.repeat(s)+'☆'.repeat(3-s)}</div><h1>Kamu hebat!</h1><p class="sub">${sc} dari ${g.n} benar di percobaan pertama</p><p class="sub" id="finPts">⭐ +${rp} poin${bonus?` (termasuk bonus level +${bonus})`:''} · Total ${SCORE.getTotalScore()}</p><button class="go" onclick="run(${k},${lv})">Main lagi</button> ${lv<3?`<button class="go" style="background:#f59e0b" onclick="run(${k},${lv+1})">Level ${lv+1} ▶</button>`:''} <button class="go2" style="background:var(--ac)" onclick="catPage('${GCAT[g.id]}')">Daftar Game</button> <button class="go2" style="background:#0ea5e9" onclick="skorPage()">🏆 Skor</button></div>`);return}
   mis=0;locked=0;qid=rid+':'+i;$('#pg').textContent=`${i+1}/${g.n}`;qtxt='';try{g.r($('#st'),ans,i,lv)}catch(e){$('#st').innerHTML='<p style="font-size:18px">⚠️ Error: '+e.message+'</p>'}const q=qtxt||(QS[g.id]?QS[g.id](lv):'');LQ=q||g.i;say(i==0?g.i+' '+q:LQ)};nx()}
-
-
-/* ======================================================================
-   REVISI v6 — Metamorfosis (halaman pengantar + materi) dan pemisahan logika 4 game.
-   Metamorfosis, Susun Es Krim, Susun Sandwich, Susun Tanaman kini punya data, state,
-   render, dan validasi sendiri. Tidak lagi memakai seqR()/RP.
-   ID game lama (kupu, es, siram) dipertahankan agar skor tersimpan tidak hilang.
-   Suara, skor (SCORE), navigasi, dan filter usia tetap memakai fungsi yang sudah ada.
-   ====================================================================== */
-(()=>{
-'use strict';
-const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-/* token per soal: timer/animasi lama berhenti sendiri kalau soal sudah berganti atau halaman ditinggalkan */
-const genTok=el=>{const g=(el.__m6||0)+1;el.__m6=g;return()=>el.isConnected&&el.__m6===g};
-const S100=(bg,inner,label)=>`<svg viewBox="0 0 100 100" role="img" aria-label="${label}"><rect width="100" height="100" rx="14" fill="${bg}"/>${inner}</svg>`;
-
-/* ---------- Ilustrasi kupu-kupu (latar hijau daun) ---------- */
-const KB='#ecfccb',LEAF='<path d="M6 86 Q50 58 94 86 Q50 100 6 86z" fill="#4ade80" stroke="#16a34a" stroke-width="2"/><path d="M12 85 Q50 75 88 85" stroke="#16a34a" stroke-width="1.5" fill="none"/>';
-const KS={
- telur:()=>S100(KB,LEAF+[[36,64],[50,58],[64,64]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="9" ry="11" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/><ellipse cx="${x-3}" cy="${y-4}" rx="2.4" ry="3.4" fill="#fff" opacity=".85"/>`).join(''),'Telur kupu-kupu di atas daun'),
- ulat:()=>S100(KB,LEAF+[22,34,46,58].map((x,j)=>`<circle cx="${x}" cy="${64-(j%2)*3}" r="10" fill="${j%2?'#86efac':'#4ade80'}" stroke="#15803d" stroke-width="2"/>`).join('')+'<circle cx="74" cy="58" r="13" fill="#bef264" stroke="#4d7c0f" stroke-width="2"/><circle cx="69" cy="55" r="3.6" fill="#fff"/><circle cx="79" cy="55" r="3.6" fill="#fff"/><circle cx="69.8" cy="55.6" r="1.8" fill="#222"/><circle cx="79.8" cy="55.6" r="1.8" fill="#222"/><path d="M69 63 Q74 67 79 63" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M68 46 Q64 38 59 38 M80 46 Q84 38 89 38" stroke="#4d7c0f" stroke-width="2.5" fill="none" stroke-linecap="round"/>','Ulat hijau di atas daun'),
- kepompong:()=>S100(KB,'<path d="M18 14 H82" stroke="#92400e" stroke-width="6" stroke-linecap="round"/><path d="M50 17 V30" stroke="#78350f" stroke-width="2.5"/><path d="M50 28 C72 34 72 68 50 90 C28 68 28 34 50 28z" fill="#a7b78a" stroke="#4d5b3a" stroke-width="2.5"/><path d="M36 46 Q50 53 64 46 M33 60 Q50 68 67 60 M38 74 Q50 80 62 74" stroke="#4d5b3a" stroke-width="2" fill="none"/>','Kepompong menggantung di ranting'),
- dewasa:()=>S100('#dff3ff','<path d="M48 48 C20 10 4 40 22 54 C32 60 44 56 48 48z" fill="#fb923c" stroke="#c2410c" stroke-width="2"/><path d="M52 48 C80 10 96 40 78 54 C68 60 56 56 52 48z" fill="#fb923c" stroke="#c2410c" stroke-width="2"/><path d="M48 54 C28 54 16 80 32 86 C44 90 50 70 48 54z" fill="#f472b6" stroke="#be185d" stroke-width="2"/><path d="M52 54 C72 54 84 80 68 86 C56 90 50 70 52 54z" fill="#f472b6" stroke="#be185d" stroke-width="2"/><circle cx="26" cy="38" r="5" fill="#fff" opacity=".9"/><circle cx="74" cy="38" r="5" fill="#fff" opacity=".9"/><circle cx="33" cy="76" r="3.5" fill="#fff" opacity=".9"/><circle cx="67" cy="76" r="3.5" fill="#fff" opacity=".9"/><ellipse cx="50" cy="56" rx="3.6" ry="20" fill="#3b2a20"/><circle cx="50" cy="35" r="4.5" fill="#3b2a20"/><path d="M48 32 Q44 20 38 18 M52 32 Q56 20 62 18" stroke="#3b2a20" stroke-width="2" fill="none" stroke-linecap="round"/>','Kupu-kupu dewasa bersayap')
-};
-/* ---------- Ilustrasi katak (latar biru air) ---------- */
-const FB='#d6f0ff',WAVE='<path d="M0 92 Q12 86 25 92 T50 92 T75 92 T100 92 V100 H0z" fill="#7dd3fc" opacity=".75"/>',PAD='<ellipse cx="50" cy="90" rx="40" ry="8" fill="#4ade80" stroke="#16a34a" stroke-width="2"/>';
-const frog=(k,tail,body,dark,spots,label)=>S100(FB,PAD+`<g transform="translate(50 88) scale(${k}) translate(-50 -88)">${tail?`<path d="M72 76 Q86 76 88 88 Q78 84 70 82z" fill="${body}" stroke="${dark}" stroke-width="2"/>`:''}<ellipse cx="22" cy="78" rx="13" ry="8" fill="${body}" stroke="${dark}" stroke-width="2" transform="rotate(-20 22 78)"/><ellipse cx="78" cy="78" rx="13" ry="8" fill="${body}" stroke="${dark}" stroke-width="2" transform="rotate(20 78 78)"/><ellipse cx="50" cy="62" rx="27" ry="21" fill="${body}" stroke="${dark}" stroke-width="2"/><ellipse cx="50" cy="69" rx="16" ry="11" fill="#ecfccb" opacity=".85"/>${spots?`<circle cx="38" cy="52" r="3.5" fill="${dark}" opacity=".45"/><circle cx="60" cy="50" r="3" fill="${dark}" opacity=".45"/><circle cx="68" cy="60" r="2.6" fill="${dark}" opacity=".45"/>`:''}<ellipse cx="34" cy="84" rx="7" ry="4" fill="${body}" stroke="${dark}" stroke-width="2"/><ellipse cx="66" cy="84" rx="7" ry="4" fill="${body}" stroke="${dark}" stroke-width="2"/><circle cx="36" cy="40" r="9" fill="${body}" stroke="${dark}" stroke-width="2"/><circle cx="64" cy="40" r="9" fill="${body}" stroke="${dark}" stroke-width="2"/><circle cx="36" cy="40" r="5.5" fill="#fff"/><circle cx="64" cy="40" r="5.5" fill="#fff"/><circle cx="37" cy="41" r="2.8" fill="#111"/><circle cx="63" cy="41" r="2.8" fill="#111"/><path d="M38 56 Q50 64 62 56" stroke="${dark}" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>`,label);
-const FK={
- telur:()=>S100(FB,WAVE+'<path d="M8 100 Q4 82 14 70 M92 100 Q98 82 88 66" stroke="#15803d" stroke-width="4" fill="none" stroke-linecap="round"/>'+[[30,62],[46,54],[62,62],[38,76],[54,76],[70,76],[46,36]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="9.5" fill="#f0fdfa" fill-opacity=".8" stroke="#7dd3fc" stroke-width="2"/><circle cx="${x}" cy="${y}" r="3.6" fill="#1f2937"/><circle cx="${x-3}" cy="${y-4}" r="1.6" fill="#fff" opacity=".9"/>`).join(''),'Telur katak bening berbintik hitam di dalam air'),
- berudu:()=>S100(FB,WAVE+'<path d="M52 52 Q72 36 92 52 Q72 68 52 52z" fill="#475569" stroke="#1e293b" stroke-width="2"/><ellipse cx="40" cy="52" rx="20" ry="15" fill="#334155" stroke="#1e293b" stroke-width="2"/><circle cx="30" cy="46" r="4.5" fill="#fff"/><circle cx="30.8" cy="46.6" r="2.2" fill="#111"/><path d="M26 58 Q32 62 38 58" stroke="#e2e8f0" stroke-width="2" fill="none" stroke-linecap="round"/>','Berudu berekor tanpa kaki'),
- berudukaki:()=>S100(FB,WAVE+'<path d="M58 48 Q74 38 90 48 Q74 58 58 48z" fill="#6b7a3f" stroke="#3f4a1f" stroke-width="2"/><path d="M52 58 L60 72 L70 72 M40 61 L44 76 L54 77" stroke="#6b7a3f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><ellipse cx="42" cy="48" rx="19" ry="14" fill="#7c8c47" stroke="#3f4a1f" stroke-width="2"/><circle cx="32" cy="42" r="4.5" fill="#fff"/><circle cx="32.8" cy="42.6" r="2.2" fill="#111"/>','Berudu yang mulai tumbuh kaki belakang'),
- muda:()=>frog(.7,1,'#a3d977','#4d7c0f',0,'Katak muda kecil dengan sisa ekor pendek'),
- dewasa:()=>frog(1,0,'#22c55e','#15803d',1,'Katak dewasa tanpa ekor')
-};
-/* ---------- Data materi (terpisah dari data permainan lain; ayam sengaja tidak ada) ---------- */
-const META={
- kupu:{nama:'Kupu-kupu',ic:'🦋',tahap:[
-  {s:'telur',n:'Telur',d:'Kupu-kupu menaruh telur yang sangat kecil di atas daun.',svg:KS.telur},
-  {s:'ulat',n:'Ulat',d:'Telur menetas menjadi ulat. Ulat makan banyak daun dan tumbuh besar.',svg:KS.ulat},
-  {s:'kepompong',n:'Kepompong',d:'Ulat menggantung dan berubah menjadi kepompong. Di dalamnya, tubuhnya berubah pelan-pelan.',svg:KS.kepompong},
-  {s:'kupu-kupu',n:'Kupu-kupu dewasa',d:'Kepompong terbuka. Keluarlah kupu-kupu bersayap indah yang bisa terbang.',svg:KS.dewasa}]},
- katak:{nama:'Katak',ic:'🐸',tahap:[
-  {s:'telur katak',n:'Telur katak',d:'Katak menaruh banyak telur bening di dalam air.',svg:FK.telur},
-  {s:'berudu',n:'Berudu',d:'Telur menetas menjadi berudu. Berudu berenang dengan ekornya.',svg:FK.berudu},
-  {s:'berudu berkaki',n:'Berudu mulai tumbuh kaki',d:'Kaki belakang tumbuh lebih dulu. Ekornya masih panjang.',svg:FK.berudukaki},
-  {s:'katak muda',n:'Katak muda',d:'Berudu berubah menjadi katak kecil. Ekornya makin pendek.',svg:FK.muda},
-  {s:'katak dewasa',n:'Katak dewasa',d:'Ekornya sudah hilang. Katak dewasa bisa melompat di darat dan berenang di air.',svg:FK.dewasa}]}
-};
-
-/* ---------- Halaman pengantar + materi Metamorfosis ---------- */
-const kIdx=()=>G.findIndex(g=>g.id=='kupu');
-/* Tombol video: sengaja tanpa onclick/listener, atribut disabled asli, tidak ada URL/pemutar. */
-const VIDEO_BTN='<button type="button" class="m6-btn vid" disabled aria-disabled="true"><span class="ic" aria-hidden="true">🎬</span><span>Video Segera Hadir</span><span class="clk" aria-hidden="true">⏳</span></button>';
-const intro0=intro;
-const patchBack=k=>{const b=document.querySelector('#app .bar .bk');if(b)b.setAttribute('onclick',`introMeta(${k})`)};
-window.intro=function(k,quiet){const g=G[k];if(g&&g.id==='kupu'){if(!quiet)return window.introMeta(k);intro0(k,quiet);patchBack(k);return}return intro0(k,quiet)};
-window.introMeta=function(k){k=k==null?kIdx():k;curRun=0;curCat=GCAT.kupu;
- setTimeout(()=>say('Yuk, belajar metamorfosis! Pilih belajar materi, atau mulai bermain.'),150);
- view(`<div class="bar"><button class="bk" type="button" aria-label="Kembali ke daftar game" onclick="catPage('${GCAT.kupu}')">◀</button><b>Metamorfosis</b></div>
- <div class="m6-hero"><div class="m6-art">${KS.dewasa()}<b aria-hidden="true">✨</b>${FK.dewasa()}</div>
- <h1>Yuk, Belajar Metamorfosis!</h1><p class="sub">Beberapa hewan berubah bentuk saat tumbuh. Lihat bagaimana kupu-kupu dan katak berubah!</p></div>
- <button type="button" class="m6-btn mat" onclick="materiMeta(${k},'kupu')"><span class="ic" aria-hidden="true">📖</span><span>Pelajari Materi</span></button>
- ${VIDEO_BTN}
- <button type="button" class="m6-btn pri" onclick="mulaiMeta(${k})"><span class="ic" aria-hidden="true">🎮</span><span>Mulai Bermain</span></button>`);toTop()};
-window.mulaiMeta=function(k){intro0(k,false);patchBack(k)};
-window.materiMeta=function(k,key){key=META[key]?key:'kupu';const M=META[key];curRun=0;curCat=GCAT.kupu;
- view(`<div class="bar"><button class="bk" type="button" aria-label="Kembali" onclick="introMeta(${k})">◀</button><b>Pelajari Materi</b></div>
- <div class="chips" role="group" aria-label="Pilih hewan">${Object.keys(META).map(id=>`<button type="button" class="${id==key?'on':''}" aria-pressed="${id==key}" onclick="materiMeta(${k},'${id}')">${META[id].ic} ${META[id].nama}</button>`).join('')}</div>
- <h2 style="margin-top:0">${M.ic} Daur hidup ${M.nama} <small style="font-weight:600;opacity:.7">(${M.tahap.length} tahap)</small></h2>
- <p class="sub">Ketuk kartu untuk mendengar penjelasannya.</p>
- <ol class="m6-tl">${M.tahap.map((s,j)=>`<li><button type="button" class="m6-sc" data-j="${j}"><span class="no">${j+1}</span><span class="im">${s.svg()}</span><span class="tx"><b>${esc(s.n)}</b><span>${esc(s.d)}</span></span></button>${j<M.tahap.length-1?'<div class="m6-ar" aria-hidden="true">⬇</div>':''}</li>`).join('')}</ol>
- ${VIDEO_BTN}
- <button type="button" class="m6-btn pri" onclick="mulaiMeta(${k})"><span class="ic" aria-hidden="true">🎮</span><span>Mulai Bermain</span></button>
- <button type="button" class="m6-btn sec" onclick="introMeta(${k})">◀ Kembali</button>`);
- document.querySelectorAll('.m6-sc').forEach(b=>b.addEventListener('click',()=>{const s=M.tahap[+b.dataset.j];say(s.n+'. '+s.d)}));toTop()};
-
-/* ======================================================================
-   GAME 1 — METAMORFOSIS: mengurutkan tahap daur hidup (drag-and-drop / ketuk-lalu-ketuk).
-   Validasi: urutan biologis. Kartu diacak tiap ronde.
-   ====================================================================== */
-function metaGame(el,ans,i,lv){
- const live=genTok(el),key=['kupu','katak'][(i+(lv==2?1:0))%2],M=META[key],T=M.tahap,N=T.length;
- let order=SH(T.map((_,k)=>k));for(let z=0;z<20&&order.every((v,k)=>v===k);z++)order=SH(order);
- const slots=Array(N).fill(-1);
- let sel=-1,done=0,busy=0,mark=null,fbk='',fbc='',suppress=0,nxt=0,wrong=0;
- const lab=placed=>lv==1||(lv==2&&placed);
- const card=(c,placed)=>`<button type="button" class="m6-cd${sel===c?' sel':''}" data-c="${c}" aria-label="Kartu ${esc(T[c].n)}">${T[c].svg()}${lab(placed)?`<small>${esc(T[c].s)}</small>`:''}</button>`;
- const render=()=>{
-  const rest=order.filter(c=>!slots.includes(c)),full=slots.every(v=>v>=0);
-  el.innerHTML=`<p class="m6-q">Susun daur hidup <b>${M.nama}</b> ${M.ic}<br><small>Seret kartu ke kotak, atau ketuk kartu lalu ketuk kotaknya.</small></p>
-  <div class="m6-slots" role="list" aria-label="Urutan tahap">${slots.map((c,p)=>`<div class="m6-slot-w" role="listitem"><span class="no">${p+1}</span>${c>=0?`<div class="m6-slot has${mark?(mark[p]?' bad':' ok'):''}" data-p="${p}">${card(c,1)}</div>`:`<button type="button" class="m6-slot" data-p="${p}" aria-label="Kotak ${p+1}, kosong"><span class="m6-ph">${p+1}</span></button>`}</div>`).join('')}</div>
-  <div class="m6-tray" ${rest.length?'':'data-empty="1"'} aria-label="Kartu yang belum dipasang">${rest.map(c=>card(c,0)).join('')}</div>
-  <div class="m6-fb ${fbc}" role="status" aria-live="polite">${fbk||'Mulai dari tahap pertama ya!'}</div>
-  <div class="m6-row"><button class="go2" type="button" data-x="clr"${busy?' disabled':''}>↺ Ulangi</button><button class="go" type="button" data-x="chk"${full&&!busy?'':' disabled'}>Periksa ✔</button></div>`;
- };
- const drop=(c,from,p)=>{const prev=slots[p];if(prev===c)return;if(from>=0)slots[from]=prev;slots[p]=c};
- const reset=()=>{sel=-1;mark=null;fbk='';fbc=''};
- const check=()=>{
-  if(done||busy||slots.some(v=>v<0))return;
-  const bad=slots.map((v,p)=>v!==p);
-  if(!bad.some(Boolean)){win();return}
-  wrong++;busy=1;mark=bad;const p=bad.indexOf(true),n=bad.filter(Boolean).length;
-  const hint=p==0?'Daur hidup selalu dimulai dari telur.':`Coba ingat: apa yang terjadi setelah ${T[p-1].n.toLowerCase()}?`;
-  fbk=(n==N?'Belum ada yang pas. ':`Ada ${n} kartu yang belum pas. Yang hijau sudah benar! `)+hint;fbc='bad';render();
-  ans(false,'Belum tepat');say(fbk);
-  setTimeout(()=>{if(!live())return;bad.forEach((b,q)=>{if(b)slots[q]=-1});mark=null;busy=0;fbk='Kartu yang belum pas sudah kembali. Coba lagi ya!';fbc='';render()},1800);
- };
- const win=()=>{done=1;sfx(1);burst();say('Betul! Urutan daur hidup '+M.nama.toLowerCase()+': '+T.map(x=>x.n.toLowerCase()).join(', lalu ')+'.');result()};
- const result=()=>{
-  el.onpointerdown=null;
-  el.innerHTML=`<div class="m6-fb good" role="status">🎉 Betul! Inilah daur hidup ${M.nama}.</div>
-  <div class="m6-anim"><div class="m6-big" data-big></div><b class="m6-cap" data-cap></b><p class="m6-dsc" data-dsc></p></div>
-  <div class="m6-strip" aria-hidden="true">${T.map((s,k)=>`<div class="m6-sm" data-k="${k}">${s.svg()}<span>${k+1}</span></div>${k<N-1?'<span class="ar">➜</span>':''}`).join('')}</div>
-  <div class="m6-row"><button class="go2" type="button" data-x="rep">🔁 Putar lagi</button><button class="go" type="button" data-x="nxt">Lanjut ▶</button></div>`;
-  let run=0;
-  const show=k=>{const b=el.querySelector('[data-big]');if(!b)return;b.innerHTML=T[k].svg();b.classList.remove('m6-in');void b.offsetWidth;b.classList.add('m6-in');
-   el.querySelector('[data-cap]').textContent=`Tahap ${k+1}: ${T[k].n}`;el.querySelector('[data-dsc]').textContent=T[k].d;
-   el.querySelectorAll('.m6-sm').forEach((n,q)=>n.classList.toggle('on',q===k))};
-  const play=()=>{const my=++run;let k=0;const step=()=>{if(!live()||my!==run)return;show(k);if(k<N-1){k++;setTimeout(step,1900)}};step()};
-  el.onclick=e=>{const x=e.target.closest('[data-x]');if(!x)return;
-   if(x.dataset.x==='rep')play();
-   else if(x.dataset.x==='nxt'&&!nxt){nxt=1;run++;ans(true)}};
-  play();
- };
- el.onclick=e=>{
-  if(suppress||done||busy)return;
-  const x=e.target.closest('[data-x]');
-  if(x){if(x.dataset.x==='clr'){slots.fill(-1);reset();render()}else if(x.dataset.x==='chk')check();return}
-  const cd=e.target.closest('.m6-cd'),sl=e.target.closest('[data-p]');
-  if(cd&&sl){const p=+sl.dataset.p,c=+cd.dataset.c;if(sel>=0&&sel!==c){const s=sel;slots[p]=s}else slots[p]=-1;reset();render();return}
-  if(cd){const c=+cd.dataset.c;sel=sel===c?-1:c;mark=null;render();return}
-  if(sl){const p=+sl.dataset.p;if(sel>=0){slots[p]=sel;reset();render()}else if(slots[p]>=0){slots[p]=-1;reset();render()}else flash('Pilih kartu dulu ya')}
- };
- /* seret & lepas: pointer events (jalan di layar sentuh maupun mouse); ketuk tetap jadi alternatif */
- el.onpointerdown=e=>{
-  if(done||busy||e.button>0)return;const cd=e.target.closest('.m6-cd');if(!cd)return;
-  const c=+cd.dataset.c,from=slots.indexOf(c),sx=e.clientX,sy=e.clientY,id=e.pointerId;let ghost=null;
-  const off=()=>{removeEventListener('pointermove',mv);removeEventListener('pointerup',end);removeEventListener('pointercancel',cancel)};
-  const under=ev=>{const tg=document.elementFromPoint(ev.clientX,ev.clientY);return{sl:tg&&tg.closest('[data-p]'),tr:tg&&tg.closest('.m6-tray')}};
-  const mv=ev=>{if(ev.pointerId!==id)return;
-   if(!ghost&&Math.hypot(ev.clientX-sx,ev.clientY-sy)>10){ghost=document.createElement('div');ghost.className='m6-ghost';ghost.innerHTML=T[c].svg();document.body.appendChild(ghost);cd.classList.add('drag')}
-   if(ghost){ghost.style.left=ev.clientX+'px';ghost.style.top=ev.clientY+'px';el.querySelectorAll('.over').forEach(n=>n.classList.remove('over'));const u=under(ev);if(u.sl&&el.contains(u.sl))u.sl.classList.add('over')}};
-  const end=ev=>{if(ev.pointerId!==id)return;off();if(!ghost)return;ghost.remove();suppress=1;setTimeout(()=>{suppress=0},80);
-   if(!live()||done||busy)return;const u=under(ev);
-   if(u.sl&&el.contains(u.sl))drop(c,from,+u.sl.dataset.p);else if(from>=0&&u.tr&&el.contains(u.tr))slots[from]=-1;
-   reset();render()};
-  const cancel=ev=>{if(ev.pointerId!==id)return;off();if(ghost){ghost.remove();suppress=1;setTimeout(()=>{suppress=0},80);if(live())render()}};
-  addEventListener('pointermove',mv);addEventListener('pointerup',end);addEventListener('pointercancel',cancel);
- };
- qtxt='Susun daur hidup '+M.nama.toLowerCase()+'. Mulai dari telur!';
- render();
-}
-
-/* ======================================================================
-   GAME 2 — SUSUN ES KRIM: meracik pesanan pelanggan.
-   Validasi: wadah, jumlah tiap rasa, topping wajib/boleh. Urutan memilih tidak dinilai.
-   ====================================================================== */
-const FLV=[{id:'stroberi',n:'Stroberi',c:'#fda4c8',d:'#ec4899'},{id:'cokelat',n:'Cokelat',c:'#8b5a3c',d:'#5c3a21'},{id:'vanila',n:'Vanila',c:'#fff3c4',d:'#e0b94a'},{id:'melon',n:'Melon',c:'#a7f3d0',d:'#10b981'},{id:'blueberi',n:'Blueberi',c:'#a5b4fc',d:'#6366f1'}];
-const TOP=[{id:'ceri',n:'Ceri',e:'🍒'},{id:'sprinkles',n:'Sprinkles',e:'✨'},{id:'saus',n:'Saus cokelat',e:'🍫'},{id:'kacang',n:'Kacang',e:'🥜'},{id:'biskuit',n:'Biskuit',e:'🍪'}];
-const WDH=[{id:'cone',n:'Cone'},{id:'mangkuk',n:'Mangkuk'}];
-const fOf=id=>FLV.find(f=>f.id===id),tOf=id=>TOP.find(t=>t.id===id),wOf=id=>WDH.find(w=>w.id===id);
-const icoW=id=>id==='cone'?'<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="12" r="9" fill="#fda4c8" stroke="#ec4899" stroke-width="2"/><path d="M11 18 L29 18 L20 38z" fill="#e8b36a" stroke="#b5762c" stroke-width="2" stroke-linejoin="round"/></svg>':'<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="15" r="9" fill="#fda4c8" stroke="#ec4899" stroke-width="2"/><path d="M4 18 Q20 28 36 18 Q34 36 20 38 Q6 36 4 18z" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/></svg>';
-const SPR=[[-14,-10,'#ef4444',20],[-4,-18,'#3b82f6',-30],[8,-12,'#facc15',60],[14,-4,'#22c55e',-10],[-10,0,'#a855f7',40],[2,-2,'#ec4899',-50],[-18,-2,'#f97316',10],[16,-16,'#06b6d4',-60]];
-function iceSVG(st,pop){
- const n=st.scoops.length,cone=st.wadah==='cone',P=cone?[[100,116],[100,82],[100,48]]:[[100,112],[66,126],[134,126]],r=cone?36:32;let s='';
- if(!st.wadah)s+='<path d="M56 128 L144 128 L100 236z" fill="none" stroke="#9ca3af" stroke-width="3" stroke-dasharray="7 7" stroke-linejoin="round"/><text x="100" y="170" font-size="40" text-anchor="middle" fill="#9ca3af">?</text>';
- if(cone)s+='<clipPath id="m6cn"><path d="M56 128 L144 128 L100 236z"/></clipPath><path d="M56 128 L144 128 L100 236z" fill="#e8b36a"/><g clip-path="url(#m6cn)" stroke="#b5762c" stroke-width="2.5" opacity=".75"><path d="M40 130 L130 240 M60 126 L150 236 M80 126 L170 236 M100 126 L190 236 M120 126 L210 236 M20 130 L110 240 M160 130 L70 240 M140 126 L50 236 M120 126 L30 236 M100 126 L10 236 M80 126 L-10 236"/></g><path d="M56 128 L144 128 L100 236z" fill="none" stroke="#b5762c" stroke-width="3" stroke-linejoin="round"/>';
- else if(st.wadah==='mangkuk')s+='<ellipse cx="100" cy="134" rx="76" ry="15" fill="#bae6fd" stroke="#38bdf8" stroke-width="3"/>';
- st.scoops.forEach((id,j)=>{const f=fOf(id),[x,y]=P[j];
-  s+=`<g class="${pop&&j==n-1?'m6-pop':''}"><circle cx="${x}" cy="${y}" r="${r}" fill="${f.c}" stroke="${f.d}" stroke-width="3"/><path d="M${x-r*.55} ${y-r*.25} a${r*.7} ${r*.7} 0 0 1 ${r*.45} -${r*.45}" stroke="#fff" stroke-width="4" opacity=".6" fill="none" stroke-linecap="round"/><path d="M${x-r+3} ${y+r*.55} q${r*.3} 12 ${r*.6} 0 q${r*.3} 12 ${r*.6} 0 q${r*.3} 12 ${r*.6} 0" stroke="${f.d}" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/></g>`});
- if(st.wadah==='mangkuk')s+='<path d="M26 130 Q100 166 174 130 Q172 214 100 228 Q28 214 26 130z" fill="#e0f2fe" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round"/><path d="M40 160 Q100 186 160 160" stroke="#fff" stroke-width="4" fill="none" opacity=".7" stroke-linecap="round"/>';
- if(n){const [tx,ty]=P[n-1];
-  if(st.tops.includes('saus'))s+=`<path d="M${tx-r+2} ${ty-4} A${r-2} ${r-2} 0 0 1 ${tx+r-2} ${ty-4} q-5 16 -11 4 q-5 18 -12 0 q-6 14 -13 2 q-6 12 -12 -2 q-5 10 -9 -4z" fill="#5b341f"/>`;
-  if(st.tops.includes('sprinkles'))s+=SPR.map(([dx,dy,c,a])=>`<rect x="${tx+dx-5}" y="${ty+dy*1.2-r*.45-2}" width="10" height="4" rx="2" fill="${c}" transform="rotate(${a} ${tx+dx} ${ty+dy*1.2-r*.45})"/>`).join('');
-  if(st.tops.includes('kacang'))s+=[[-12,-.7],[0,-.9],[12,-.7],[-6,-.45],[7,-.5]].map(([dx,m])=>`<ellipse cx="${tx+dx}" cy="${ty+r*m}" rx="5" ry="3.4" fill="#b7793e" stroke="#7a4a1d" stroke-width="1.5" transform="rotate(${dx*3} ${tx+dx} ${ty+r*m})"/>`).join('');
-  if(st.tops.includes('biskuit'))s+=`<g transform="rotate(24 ${tx+r*.55} ${ty-r*.7})"><circle cx="${tx+r*.55}" cy="${ty-r*.7}" r="13" fill="#d9a460" stroke="#92602b" stroke-width="2.5"/><circle cx="${tx+r*.55-4}" cy="${ty-r*.7-3}" r="2" fill="#5b341f"/><circle cx="${tx+r*.55+4}" cy="${ty-r*.7+2}" r="2" fill="#5b341f"/><circle cx="${tx+r*.55+1}" cy="${ty-r*.7+6}" r="1.6" fill="#5b341f"/></g>`;
-  if(st.tops.includes('ceri'))s+=`<path d="M${tx} ${ty-r-6} q4 -14 14 -18" stroke="#166534" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="${tx}" cy="${ty-r-2}" r="10" fill="#dc2626" stroke="#991b1b" stroke-width="2.5"/><circle cx="${tx-3}" cy="${ty-r-5}" r="2.6" fill="#fff" opacity=".7"/>`;
- }
- return `<svg viewBox="0 -30 200 270" role="img" aria-label="${esc(esDesc(st))}">${s}</svg>`;
-}
-const esDesc=st=>st.wadah?`Es krim di ${wOf(st.wadah).n.toLowerCase()}${st.scoops.length?' dengan '+st.scoops.map(x=>fOf(x).n.toLowerCase()).join(', '):', belum ada scoop'}${st.tops.length?', topping '+st.tops.map(x=>tOf(x).n.toLowerCase()).join(', '):''}`:'Belum ada wadah';
-const mkEsOrder=lv=>{
- const w=R(WDH).id,fl=SH(FLV),sc=lv<3?fl.slice(0,lv==1?1:2).map(f=>f.id):(Math.random()<.5?fl.slice(0,3).map(f=>f.id):[fl[0].id,fl[0].id,fl[1].id]);
- const tp=SH(TOP),nt=lv==3?2:1,req=tp.slice(0,nt).map(x=>x.id),opt=lv>=2?[tp[nt].id]:[];
- return{w,sc,req,opt};
-};
-const cekEs=(o,s)=>{
- const p=[],need={},have={};
- if(!s.wadah)p.push('Pilih wadahnya dulu: cone atau mangkuk.');
- else if(s.wadah!==o.w)p.push(`Wadahnya belum sesuai. Pesanan minta ${wOf(o.w).n.toLowerCase()}.`);
- o.sc.forEach(x=>need[x]=(need[x]||0)+1);s.scoops.forEach(x=>have[x]=(have[x]||0)+1);
- if(!s.scoops.length)p.push('Belum ada scoop es krimnya.');
- else{for(const id in need){const a=have[id]||0,b=need[id];if(a<b)p.push(`Rasa ${fOf(id).n.toLowerCase()} masih kurang: pesanan ${b} scoop, baru ${a}.`);else if(a>b)p.push(`Rasa ${fOf(id).n.toLowerCase()} kebanyakan: pesanan ${b} scoop, ada ${a}.`)}
-  for(const id in have)if(!need[id])p.push(`Rasa ${fOf(id).n.toLowerCase()} tidak ada di pesanan.`)}
- o.req.forEach(t=>{if(!s.tops.includes(t))p.push(`Topping ${tOf(t).n.toLowerCase()} belum ada.`)});
- s.tops.forEach(t=>{if(!o.req.includes(t)&&!o.opt.includes(t))p.push(`Topping ${tOf(t).n.toLowerCase()} tidak dipesan.`)});
- return p;
-};
-function esGame(el,ans,i,lv){
- const live=genTok(el),o=mkEsOrder(lv),st={wadah:null,scoops:[],tops:[]},MAX=3;
- let done=0,nxt=0,fbk='',fbc='',pop=0;
- const cnt={};o.sc.forEach(x=>cnt[x]=(cnt[x]||0)+1);
- const ticket=`<div class="m6-tk" aria-label="Pesanan pelanggan"><div class="who" aria-hidden="true">🧒</div><div class="tkb"><b>Pesanan:</b>
-  <div class="tr"><span class="k">Wadah</span><span class="m6-tag" data-id="${o.w}">${wOf(o.w).n}</span></div>
-  <div class="tr"><span class="k">Rasa</span>${Object.entries(cnt).map(([id,n])=>`<span class="m6-tag" data-id="${id}"><i class="dot" style="background:${fOf(id).c}"></i>${n>1?n+'× ':''}${fOf(id).n}</span>`).join('')}</div>
-  <div class="tr"><span class="k">Topping</span>${o.req.map(t=>`<span class="m6-tag" data-id="${t}">${tOf(t).e} ${tOf(t).n}</span>`).join('')}</div>
-  ${o.opt.length?`<div class="tr"><span class="k">Boleh</span>${o.opt.map(t=>`<span class="m6-tag opt" data-id="${t}">${tOf(t).e} ${tOf(t).n}</span>`).join('')}<small>(tidak wajib)</small></div>`:''}</div>
-  ${lv==1?`<div class="prev" aria-hidden="true">${iceSVG({wadah:o.w,scoops:o.sc,tops:o.req},0)}</div>`:''}</div>`;
- const render=()=>{
-  const full=st.scoops.length>=MAX;
-  el.innerHTML=`${ticket}<div class="m6-ice">${iceSVG(st,pop)}</div>
-  <p class="m6-sec"><b>1. Pilih wadah</b></p><div class="m6-opts" style="grid-template-columns:1fr 1fr">${WDH.map(w=>`<button type="button" class="m6-op${st.wadah===w.id?' on':''}" data-w="${w.id}" aria-pressed="${st.wadah===w.id}">${icoW(w.id)}<span>${w.n}</span></button>`).join('')}</div>
-  <p class="m6-sec"><b>2. Tambah rasa</b> <small>(ketuk = tambah 1 scoop, maks ${MAX})</small></p><div class="m6-opts" style="grid-template-columns:repeat(auto-fit,minmax(86px,1fr))">${FLV.map(f=>{const n=st.scoops.filter(x=>x===f.id).length;return `<button type="button" class="m6-op" data-f="${f.id}" aria-label="Tambah scoop ${f.n}, sekarang ${n}"><i class="dot" style="background:${f.c}"></i><span>${f.n}</span>${n?`<b class="n">${n}</b>`:''}</button>`}).join('')}</div>
-  <p class="m6-sec"><b>3. Topping</b> <small>(ketuk lagi untuk melepas)</small></p><div class="m6-opts" style="grid-template-columns:repeat(auto-fit,minmax(86px,1fr))">${TOP.map(t=>`<button type="button" class="m6-op${st.tops.includes(t.id)?' on':''}" data-t="${t.id}" aria-pressed="${st.tops.includes(t.id)}"><span class="e">${t.e}</span><span>${t.n}</span></button>`).join('')}</div>
-  <div class="m6-fb ${fbc}" role="status" aria-live="polite">${fbk||(full?'Scoop sudah penuh. Hapus dulu kalau mau ganti.':'Racik es krim sesuai pesanan, lalu tekan Selesaikan Pesanan.')}</div>
-  <div class="m6-row"><button class="go2" type="button" data-x="undo"${st.scoops.length?'':' disabled'}>↩ Hapus scoop</button><button class="go2" type="button" style="background:#64748b" data-x="clr">🗑 Kosongkan</button><button class="go" type="button" data-x="fin">Selesaikan Pesanan ✔</button></div>`;
- };
- const finish=()=>{
-  if(done)return;const pr=cekEs(o,st);
-  if(!pr.length){done=1;sfx(1);burst();say('Pesanan selesai! Es krimnya pas sekali.');
-   el.innerHTML=`<div class="m6-fb good" role="status">😋 Terima kasih! Es krimnya persis seperti pesananku!</div><div class="m6-ice big">${iceSVG(st,0)}</div><p class="m6-q" style="font-size:18px">${esc(esDesc(st))}.</p><button class="go" type="button" data-x="nxt">Lanjut ▶</button>`;return}
-  fbk='Belum sesuai pesanan:<br>'+pr.slice(0,3).map(esc).join('<br>');fbc='bad';render();
-  ans(false,'Belum sesuai pesanan');say(pr.slice(0,2).join(' '));
- };
- el.onclick=e=>{
-  const b=e.target.closest('button');if(!b)return;
-  if(b.dataset.x==='nxt'){if(!nxt){nxt=1;ans(true)}return}
-  if(done)return;pop=0;fbk='';fbc='';
-  if(b.dataset.w){st.wadah=b.dataset.w;beep(480,.05)}
-  else if(b.dataset.f){if(st.scoops.length>=MAX){flash('Scoop sudah penuh!');return}st.scoops.push(b.dataset.f);pop=1;beep(560,.06)}
-  else if(b.dataset.t){const k=st.tops.indexOf(b.dataset.t);if(k>=0)st.tops.splice(k,1);else st.tops.push(b.dataset.t);beep(620,.05)}
-  else if(b.dataset.x==='undo')st.scoops.pop();
-  else if(b.dataset.x==='clr'){st.wadah=null;st.scoops.length=0;st.tops.length=0}
-  else if(b.dataset.x==='fin'){finish();return}
-  render();
- };
- qtxt='Buat es krim sesuai pesanan. Pesanannya: '+wOf(o.w).n.toLowerCase()+', '+Object.entries(cnt).map(([id,n])=>(n>1?n+' scoop ':'')+fOf(id).n.toLowerCase()).join(' dan ')+', topping '+o.req.map(t=>tOf(t).n.toLowerCase()).join(' dan ')+'.';
- render();
-}
-
-/* ======================================================================
-   GAME 3 — SUSUN SANDWICH: menumpuk lapisan sesuai spesifikasi pesanan.
-   Validasi: roti bawah = alas, roti atas = penutup, bahan wajib tepat satu,
-   urutan isian HANYA dinilai bila pesanan menetapkannya (Lv1 / aturan Lv3).
-   ====================================================================== */
-const SWI={roti:{n:'Roti',e:'🍞',h:26},selada:{n:'Selada',e:'🥬',h:16},tomat:{n:'Tomat',e:'🍅',h:14},keju:{n:'Keju',e:'🧀',h:12},daging:{n:'Daging',e:'🥩',h:20},telur:{n:'Telur',e:'🍳',h:16},timun:{n:'Timun',e:'🥒',h:12}};
-const FILL=['selada','tomat','keju','daging','telur','timun'];
-function swLayer(id,y,h,idx){
- if(id==='roti')return idx==0
-  ?`<rect x="30" y="${y+3}" width="140" height="${h-3}" rx="11" fill="#e9b872" stroke="#b9772f" stroke-width="3"/><rect x="38" y="${y+8}" width="124" height="5" rx="2.5" fill="#f6dcaa" opacity=".9"/>`
-  :`<path d="M30 ${y+h-1} Q26 ${y+6} 58 ${y-2} Q100 ${y-12} 142 ${y-2} Q174 ${y+6} 170 ${y+h-1}Z" fill="#e9b872" stroke="#b9772f" stroke-width="3" stroke-linejoin="round"/>${[[70,4,-20],[100,-3,10],[130,4,25],[86,11,-10],[116,11,15]].map(([x,dy,a])=>`<ellipse cx="${x}" cy="${y+dy}" rx="4.5" ry="2.2" fill="#fff7e0" transform="rotate(${a} ${x} ${y+dy})"/>`).join('')}`;
- if(id==='selada'){let d=`M24 ${y+h-4}`;for(let k=0;k<10;k++)d+=' q7.6 -'+(h+2)+' 15.2 0';return `<path d="${d} L176 ${y+h} L24 ${y+h}z" fill="#4ade80" stroke="#15803d" stroke-width="2.5" stroke-linejoin="round"/>`}
- if(id==='tomat')return [52,100,148].map(x=>`<ellipse cx="${x}" cy="${y+h/2}" rx="24" ry="${h/2+1}" fill="#ef4444" stroke="#b91c1c" stroke-width="2.5"/><ellipse cx="${x}" cy="${y+h/2}" rx="14" ry="3" fill="#fca5a5"/>`).join('');
- if(id==='keju')return `<path d="M26 ${y} H174 V${y+h-3} H128 L116 ${y+h+5} L104 ${y+h-3} H26z" fill="#fde047" stroke="#ca8a04" stroke-width="2.5" stroke-linejoin="round"/><circle cx="60" cy="${y+5}" r="2.5" fill="#facc15" stroke="#ca8a04"/><circle cx="148" cy="${y+6}" r="2.2" fill="#facc15" stroke="#ca8a04"/>`;
- if(id==='daging')return `<rect x="32" y="${y}" width="136" height="${h}" rx="${h/2}" fill="#8b4a24" stroke="#5a2d12" stroke-width="3"/><path d="M62 ${y+5} l7 ${h-10} M92 ${y+5} l7 ${h-10} M122 ${y+5} l7 ${h-10}" stroke="#5a2d12" stroke-width="3" stroke-linecap="round" opacity=".6"/>`;
- if(id==='telur')return `<path d="M34 ${y+h-3} Q26 ${y+4} 56 ${y+3} Q96 ${y-3} 132 ${y+3} Q176 ${y+2} 166 ${y+h-4} Q148 ${y+h+1} 100 ${y+h-1} Q56 ${y+h+1} 34 ${y+h-3}z" fill="#fff" stroke="#d4d4d8" stroke-width="2.5" stroke-linejoin="round"/><circle cx="98" cy="${y+h/2}" r="7" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>`;
- return [46,82,118,154].map(x=>`<ellipse cx="${x}" cy="${y+h/2}" rx="19" ry="${h/2}" fill="#bbf7d0" stroke="#16a34a" stroke-width="2.5"/><ellipse cx="${x}" cy="${y+h/2}" rx="11" ry="2.6" fill="#86efac"/>`).join('');
-}
-const swDesc=s=>s.length?'Sandwich dari bawah ke atas: '+s.map(x=>SWI[x].n.toLowerCase()).join(', '):'Piring kosong';
-function swSVG(stack,pop){
- let cur=212,out='';
- stack.forEach((id,idx)=>{const h=SWI[id].h;cur-=h;out+=`<g class="${pop&&idx==stack.length-1?'m6-drop':''}">${swLayer(id,cur,h,idx)}</g>`});
- return `<svg viewBox="0 0 200 232" role="img" aria-label="${esc(swDesc(stack))}"><ellipse cx="100" cy="220" rx="92" ry="9" fill="#cbd5e1"/><ellipse cx="100" cy="216" rx="86" ry="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>${stack.length?'':'<rect x="30" y="186" width="140" height="26" rx="11" fill="none" stroke="#9ca3af" stroke-width="3" stroke-dasharray="7 7"/><text x="100" y="204" font-size="14" text-anchor="middle" fill="#9ca3af">roti bawah di sini</text>'}${out}</svg>`;
-}
-const swN=id=>SWI[id].n.toLowerCase();
-const ruleTxt=r=>r.t==='above'?`${SWI[r.a].n} harus di atas ${swN(r.b)}.`:r.t==='top'?`${SWI[r.a].n} harus paling atas (tepat di bawah roti atas).`:`${SWI[r.a].n} harus paling bawah (tepat di atas roti bawah).`;
-const ruleOk=(r,f)=>r.t==='above'?f.indexOf(r.a)>f.indexOf(r.b):r.t==='top'?f[f.length-1]===r.a:f[0]===r.a;
-const mkSw=lv=>{
- const pool=SH(FILL);
- if(lv==1)return{ordered:1,mid:pool.slice(0,2),rules:[]};
- if(lv==2)return{ordered:0,mid:pool.slice(0,3),rules:[]};
- const mid=pool.slice(0,Math.random()<.5?3:4),k=R(['above','top','bottom']);
- return{ordered:0,mid,rules:[k=='above'?{t:'above',a:mid[0],b:mid[1]}:{t:k,a:mid[0]}]};
-};
-/* Validasi: kembalikan daftar masalah; kosong = sandwich benar. */
-const cekSw=(o,s)=>{
- if(!s.length)return['Tumpuk dulu bahan-bahannya ya.'];
- const p=[],last=s.length-1,topOk=s.length>1&&s[last]==='roti';
- if(s[0]!=='roti')p.push('Alasnya harus roti dulu (roti bawah).');
- if(!topOk)p.push('Sandwich belum ditutup dengan roti di paling atas.');
- let mid=s.filter((x,k)=>!(k==0&&x==='roti')&&!(k==last&&topOk));
- if(mid.includes('roti')){p.push('Roti hanya untuk alas dan penutup. Jangan taruh roti di tengah.');mid=mid.filter(x=>x!=='roti')}
- let comp=1;
- o.mid.forEach(id=>{const c=mid.filter(x=>x===id).length;if(!c){p.push(`Belum ada ${swN(id)}.`);comp=0}else if(c>1){p.push(`${SWI[id].n} kebanyakan, cukup 1.`);comp=0}});
- [...new Set(mid)].forEach(id=>{if(!o.mid.includes(id)){p.push(`${SWI[id].n} tidak ada di pesanan.`);comp=0}});
- if(comp&&o.ordered){for(let k=0;k<o.mid.length;k++)if(mid[k]!==o.mid[k]){p.push(`Urutannya belum sama seperti contoh: lapisan ke-${k+2} seharusnya ${swN(o.mid[k])}, bukan ${swN(mid[k])}.`);break}}
- if(comp)o.rules.forEach(r=>{if(!ruleOk(r,mid))p.push(ruleTxt(r))});
- return p;
-};
-function swGame(el,ans,i,lv){
- const live=genTok(el),o=mkSw(lv),MAX=9,stack=[];
- let done=0,nxt=0,fbk='',fbc='',pop=0;
- const sample=['roti',...o.mid,'roti'];
- const pantry=SH(['roti',...o.mid,...SH(FILL.filter(x=>!o.mid.includes(x))).slice(0,lv==1?1:lv==2?2:3)]);
- const has=id=>stack.slice(1).includes(id);
- const topOk=()=>stack.length>1&&stack[stack.length-1]==='roti';
- const got=()=>(stack[0]==='roti'?1:0)+(topOk()?1:0)+o.mid.filter(has).length,total=o.mid.length+2;
- const tag=(id,cls)=>`<span class="m6-tag${cls?' '+cls:''}${has(id)?' have':''}" data-id="${id}">${has(id)?'✔':SWI[id].e} ${SWI[id].n}</span>`;
- const ticket=lv==1
-  ?`<div class="m6-tk"><div class="who" aria-hidden="true">🧑‍🍳</div><div class="tkb"><b>Contoh sandwich</b><br>Tiru urutannya dari bawah ke atas:<div class="tr">${sample.map((id,k)=>`<span class="m6-tag" data-id="${id}">${k+1}. ${SWI[id].e} ${SWI[id].n}</span>`).join('')}</div></div><div class="prev" aria-hidden="true">${swSVG(sample,0)}</div></div>`
-  :`<div class="m6-tk"><div class="who" aria-hidden="true">🧑‍🍳</div><div class="tkb"><b>Pesanan sandwich</b><div class="tr"><span class="k">Alas</span><span class="m6-tag${stack[0]==='roti'?' have':''}" data-id="roti">${stack[0]==='roti'?'✔':'🍞'} Roti bawah</span></div><div class="tr"><span class="k">Isian</span>${o.mid.map(id=>tag(id)).join('')}<small>${o.rules.length?'(urutan ikut aturan)':'(urutan bebas)'}</small></div><div class="tr"><span class="k">Tutup</span><span class="m6-tag${topOk()?' have':''}" data-id="roti">${topOk()?'✔':'🍞'} Roti atas</span></div>${o.rules.map(r=>`<div class="tr">📏 <b>Aturan:</b> ${esc(ruleTxt(r))}</div>`).join('')}</div></div>`;
- const render=()=>{
-  const g=got();
-  el.innerHTML=`${ticket}<div class="m6-sw" style="width:min(56vw,210px);margin:2px auto">${swSVG(stack,pop)}</div>
-  <div class="m6-prog" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${g}" aria-label="Bagian yang sudah selesai"><div style="width:${g/total*100}%"></div></div><small>Bagian selesai: <b>${g}/${total}</b> · Lapisan: ${stack.length}</small>
-  <p class="m6-sec"><b>Rak bahan</b> <small>(ketuk untuk menumpuk di atas)</small></p>
-  <div class="m6-opts" style="grid-template-columns:repeat(auto-fit,minmax(86px,1fr))">${pantry.map(id=>`<button type="button" class="m6-op" data-i="${id}" aria-label="Tumpuk ${SWI[id].n}"><span class="e">${SWI[id].e}</span><span>${SWI[id].n}</span></button>`).join('')}</div>
-  <div class="m6-fb ${fbc}" role="status" aria-live="polite">${fbk||'Mulai dari roti bawah, lalu tumpuk isiannya. Tutup dengan roti.'}</div>
-  <div class="m6-row"><button class="go2" type="button" data-x="undo"${stack.length?'':' disabled'}>↩ Lepas lapisan atas</button><button class="go2" type="button" style="background:#64748b" data-x="clr">🗑 Ulangi</button><button class="go" type="button" data-x="fin">Periksa Sandwich ✔</button></div>`;
- };
- const finish=()=>{
-  if(done)return;const pr=cekSw(o,stack);
-  if(!pr.length){done=1;sfx(1);burst();say('Sandwichnya sempurna!');
-   el.innerHTML=`<div class="m6-fb good" role="status">🥪 Sandwichnya sempurna! Roti alas, isian lengkap, dan ditutup roti.</div><div class="m6-sw" style="width:min(62vw,240px);margin:4px auto">${swSVG(stack,0)}</div><p class="m6-q" style="font-size:18px">${esc(swDesc(stack))}.</p><button class="go" type="button" data-x="nxt">Lanjut ▶</button>`;return}
-  fbk='Belum sesuai pesanan:<br>'+pr.slice(0,3).map(esc).join('<br>');fbc='bad';render();
-  ans(false,'Belum sesuai pesanan');say(pr.slice(0,2).join(' '));
- };
- el.onclick=e=>{
-  const b=e.target.closest('button');if(!b)return;
-  if(b.dataset.x==='nxt'){if(!nxt){nxt=1;ans(true)}return}
-  if(done)return;pop=0;fbk='';fbc='';
-  if(b.dataset.i){if(stack.length>=MAX){flash('Sandwichnya sudah tinggi sekali!');return}stack.push(b.dataset.i);pop=1;beep(420+stack.length*40,.06)}
-  else if(b.dataset.x==='undo')stack.pop();
-  else if(b.dataset.x==='clr')stack.length=0;
-  else if(b.dataset.x==='fin'){finish();return}
-  render();
- };
- qtxt=lv==1?'Tiru contoh sandwich. Mulai dari roti bawah, lalu '+o.mid.map(swN).join(', lalu ')+', lalu tutup dengan roti.'
-  :'Buat sandwich sesuai pesanan: roti bawah, isian '+o.mid.map(swN).join(', ')+', lalu roti atas.'+o.rules.map(r=>' '+ruleTxt(r)).join('');
- render();
-}
-
-/* ======================================================================
-   GAME 4 — SUSUN TANAMAN: amati kondisi tanaman, pilih tindakan yang tepat.
-   Tindakan mengubah tampilan tanaman. Penyiraman TIDAK selalu benar:
-   tanah basah/lembap -> jangan siram; kurang cahaya -> pindah ke tempat terang;
-   pot kosong -> tanam benih; kondisi baik -> beri waktu tumbuh.
-   ====================================================================== */
-const SC={
- kering:{tanah:'kering',cahaya:'terang',tahap:'tunas',lemas:1,needs:['siram']},
- benihkering:{tanah:'kering',cahaya:'terang',tahap:'benih',lemas:0,needs:['siram']},
- basah:{tanah:'basah',cahaya:'terang',tahap:'tunas',lemas:0,needs:['tunggu']},
- gelap:{tanah:'lembap',cahaya:'gelap',tahap:'kecil',lemas:0,needs:['terang']},
- kosong:{tanah:'lembap',cahaya:'terang',tahap:'kosong',lemas:0,needs:['tanam']},
- tumbuh:{tanah:'lembap',cahaya:'terang',tahap:'tunas',lemas:0,needs:['tunggu']},
- keringgelap:{tanah:'kering',cahaya:'gelap',tahap:'kecil',lemas:1,needs:['siram','terang']},
- kosongkering:{tanah:'kering',cahaya:'terang',tahap:'kosong',lemas:0,needs:['tanam','siram']}
-};
-let PLAN={lv:0,list:null};
-const pickPlan=lv=>{
- const P={1:['kering','gelap','kosong','tumbuh'],2:['basah','benihkering','gelap','tumbuh','kering','kosong'],3:['basah','gelap','tumbuh','benihkering']},W=k=>SC[k].needs.includes('siram');
- let L;
- for(let z=0;z<60;z++){const base=SH(P[lv]).slice(0,lv==3?2:3);L=lv==3?[R(['keringgelap','kosongkering']),...base]:base;if(L.filter(W).length<=(lv==3?2:1))break}
- return SH(L);
-};
-const NEXTT={benih:'tunas',tunas:'kecil',kecil:'besar',besar:'besar'};
-const tahapName=S=>({kosong:'belum ada benih',benih:'benih',tunas:'tunas',kecil:'tanaman kecil',besar:'tanaman besar'}[S.tahap])+(S.lemas&&S.tahap!=='kosong'&&S.tahap!=='benih'?', daun layu':'')+(S.cahaya==='gelap'&&S.tahap!=='kosong'&&S.tahap!=='benih'?', daun pucat':'');
-const leaf=(x,y,a,c)=>`<ellipse cx="${x}" cy="${y}" rx="11" ry="5.5" fill="${c}" stroke="#166534" stroke-width="1.2" transform="rotate(${a} ${x} ${y})"/>`;
-function plantSVG(S,fx){
- const dark=S.cahaya==='gelap',h={kosong:0,benih:0,tunas:26,kecil:54,besar:84}[S.tahap],bend=dark&&h?18:0,lem=S.lemas&&h;
- const col=lem?'#a8b77a':dark?'#cfe08a':(S.tanah==='basah'&&h)?'#c9d66b':'#4ade80',tx=120+bend,ty=136-h;
- const tipX=lem?tx+24:tx,tipY=lem?ty+16:ty,la=lem?-65:28,ra=lem?65:-28;
- let s=dark?'<rect width="240" height="220" fill="#56627c"/><ellipse cx="60" cy="40" rx="42" ry="16" fill="#6b7893"/><ellipse cx="92" cy="30" rx="30" ry="14" fill="#6b7893"/><ellipse cx="190" cy="48" rx="38" ry="14" fill="#6b7893"/><rect width="240" height="220" fill="#0f172a" opacity=".22"/>'
-  :`<rect width="240" height="220" fill="#dff1ff"/><g class="${fx==='sun'?'m6-sun':''}"><circle cx="200" cy="38" r="17" fill="#facc15"/>${[0,45,90,135,180,225,270,315].map(a=>`<path d="M200 14 v-8" stroke="#facc15" stroke-width="4" stroke-linecap="round" transform="rotate(${a} 200 38)"/>`).join('')}</g>`;
- s+='<rect x="0" y="196" width="240" height="24" fill="#a16207"/><rect x="0" y="196" width="240" height="5" fill="#854d0e"/><path d="M64 146 L176 146 L164 196 L76 196z" fill="#c2410c" stroke="#7c2d12" stroke-width="3" stroke-linejoin="round"/><rect x="56" y="134" width="128" height="16" rx="6" fill="#ea580c" stroke="#7c2d12" stroke-width="3"/>';
- s+=`<ellipse cx="120" cy="136" rx="60" ry="8" fill="${S.tanah==='kering'?'#d6b27e':S.tanah==='basah'?'#3f2410':'#7a4b2a'}"/>`;
- if(S.tanah==='kering')s+='<path d="M84 136 l8 3 l6 -3 M120 133 l-4 5 l6 3 M148 137 l8 -2 l5 3" stroke="#a3793f" stroke-width="2" fill="none" stroke-linecap="round"/>';
- if(S.tanah==='basah')s+='<ellipse cx="120" cy="136" rx="46" ry="5" fill="#60a5fa" opacity=".85"/><ellipse cx="106" cy="135" rx="14" ry="1.8" fill="#fff" opacity=".6"/>';
- let p='';
- if(S.tahap==='benih')p+='<ellipse cx="120" cy="134" rx="7" ry="5" fill="#92400e" stroke="#5a2d12" stroke-width="2"/><path d="M117 132 q3 -3 6 0" stroke="#d6a25f" stroke-width="2" fill="none"/>';
- if(h){
-  p+=`<path d="${lem?`M120 136 Q120 ${ty} ${tipX} ${tipY}`:`M120 136 Q${120+bend*.2} ${136-h*.6} ${tx} ${ty}`}" stroke="${lem?'#7f8f5a':'#16a34a'}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`;
-  const pair=(f,top)=>{const px=top?tipX:120+(tx-120)*f,py=top?tipY+4:136-h*f;return leaf(px-11,py,la,col)+leaf(px+11,py,ra,col)};
-  if(S.tahap==='tunas')p+=pair(1,1);
-  else if(S.tahap==='kecil')p+=pair(.55,0)+pair(1,1);
-  else p+=pair(.35,0)+pair(.65,0)+pair(1,1);
-  if(S.tahap==='besar'&&!lem)p+=[0,60,120,180,240,300].map(a=>`<circle cx="${tx+7*Math.cos(a*Math.PI/180)}" cy="${ty-10+7*Math.sin(a*Math.PI/180)}" r="4.5" fill="#f472b6"/>`).join('')+`<circle cx="${tx}" cy="${ty-10}" r="4" fill="#facc15"/>`;
- }
- s+=`<g class="m6-plant ${fx==='grow'?'m6-grow':fx==='shake'?'m6-shake':''}">${p}</g>`;
- if(fx==='water')s+='<text x="150" y="58" font-size="34">🚿</text>'+[96,108,120,132,144].map((x,j)=>`<path d="M${x} 80 c5 6 5 11 0 11 c-5 0 -5 -5 0 -11z" fill="#38bdf8" class="m6-wd" style="animation-delay:${j*.15}s"/>`).join('');
- if(fx==='time')s+='<text x="40" y="70" font-size="36" class="m6-shake">⏳</text>';
- return `<svg class="m6-scene" viewBox="0 0 240 220" role="img" aria-label="${esc(`Pot dengan tanah ${S.tanah}, di tempat ${S.cahaya}, kondisi tanaman: ${tahapName(S)}`)}">${s}</svg>`;
-}
-const needText=(n,S)=>({siram:'Tanahnya kering, jadi tanaman butuh air.',terang:'Tanaman ada di tempat gelap, jadi butuh cahaya.',tanam:'Potnya masih kosong, jadi butuh benih.',tunggu:S.tanah==='basah'?'Tanahnya sudah basah. Tanaman butuh waktu, bukan air lagi.':'Air dan cahaya sudah cukup. Tanaman tinggal diberi waktu untuk tumbuh.'}[n]);
-const okText=(n,S)=>({siram:'Tanah jadi lembap dan daun segar lagi. Air dibutuhkan akar tanaman.',terang:'Sekarang tanaman kena cahaya. Cahaya membantu tanaman membuat makanannya.',tanam:'Benih sudah ditanam di dalam tanah.',tunggu:S.tanah==='basah'?'Tanah mengering sedikit dan tanaman segar lagi. Kebanyakan air itu tidak baik, jadi cukup ditunggu.':'Tanaman sudah punya air dan cahaya, jadi tinggal diberi waktu. Lihat, tanamannya tumbuh!'}[n]);
-function tanamanGame(el,ans,i,lv){
- const live=genTok(el);
- if(i===0||PLAN.lv!==lv||!PLAN.list)PLAN={lv,list:pickPlan(lv)};
- const key=PLAN.list[i%PLAN.list.length],sc=SC[key];
- let S={tanah:sc.tanah,cahaya:sc.cahaya,tahap:sc.tahap,lemas:sc.lemas,needs:[...sc.needs],done:[]};
- let fx='',busy=0,done=0,nxt=0,fbk='',fbc='',tries=0;const notes=[];
- const pend=()=>S.needs.filter(n=>!S.done.includes(n));
- const avail=a=>pend().includes(a)&&(a!=='siram'||!S.needs.includes('tanam')||S.done.includes('tanam'));
- const nextNeed=()=>pend().find(avail)||pend()[0];
- const ACT=[['siram','💧','Siram'],['terang','☀️','Pindah ke tempat terang'],['tanam','🌰','Tanam benih'],['tunggu','⏳','Beri waktu tumbuh']];
- const wrongMsg=a=>{
-  if(a==='siram')return S.tahap==='kosong'?'Belum ada benih yang bisa disiram. Tanam benih dulu ya.':S.tanah==='basah'?'Tanahnya sudah basah sekali. Kalau disiram lagi, akar kebanyakan air dan tanaman jadi lemas.':'Tanahnya masih lembap, airnya sudah cukup. Disiram lagi malah bikin tanah becek.';
-  if(a==='terang')return 'Tempat ini sudah terang. Cahayanya sudah cukup untuk tanaman.';
-  if(a==='tanam')return 'Di pot ini sudah ada benih atau tanaman. Tidak perlu menanam lagi.';
-  return 'Kalau hanya menunggu, tanaman tetap kekurangan sesuatu. Ada perawatan yang harus dilakukan dulu.';
- };
- const render=()=>{
-  const chips=lv<3?`<div class="m6-chips" aria-label="Hasil pengamatan"><span class="m6-chip">🟫 Tanah: ${S.tanah}</span><span class="m6-chip">${S.cahaya==='terang'?'☀️':'☁️'} Cahaya: ${S.cahaya}</span><span class="m6-chip">🌱 Tanaman: ${tahapName(S)}</span></div>`:'';
-  el.innerHTML=`<p class="m6-q">Amati tanamannya. <small>Apa yang dibutuhkan?</small></p>${plantSVG(S,fx)}${chips}
-  <div class="m6-fb ${fbc}" role="status" aria-live="polite">${fbk||'Lihat tanah, cahaya, dan tanamannya. Lalu pilih tindakan.'}</div>
-  ${done?'<button class="go" type="button" data-x="nxt">Lanjut ▶</button>':`<div class="m6-acts">${ACT.map(([a,e,n])=>`<button type="button" class="m6-act" data-a="${a}"${busy?' disabled':''}><span class="e" aria-hidden="true">${e}</span><span>${n}</span></button>`).join('')}</div>`}`;
- };
- const complete=()=>{done=1;fbk='🌿 Hebat! Tanamanmu sehat. '+notes.join(' ');fbc='good';sfx(1);burst();say('Hebat! Tanamanmu sehat. '+notes.join(' '));render();setTimeout(()=>{if(live()&&fx){fx='';render()}},1600)};
- const bad=a=>{
-  tries++;const snap=JSON.stringify(S),msg=wrongMsg(a);
-  if(a==='siram'){S.tanah='basah';if(S.tahap!=='kosong'&&S.tahap!=='benih')S.lemas=1;fx='water'}
-  else if(a==='tunggu'){if(S.tahap!=='kosong'&&S.tahap!=='benih')S.lemas=1;fx='time'}
-  else fx='shake';
-  busy=1;fbk=msg;fbc='bad';render();ans(false,'Belum tepat');say(msg);
-  setTimeout(()=>{if(!live())return;S=JSON.parse(snap);fx='';busy=0;fbk=tries>=2?'Petunjuk: '+needText(nextNeed(),S):'Aku kembalikan tanamannya. Amati lagi, apa yang dia butuhkan?';fbc='';render()},2200);
- };
- const act=a=>{
-  if(busy||done)return;
-  if(!avail(a)){bad(a);return}
-  const m=okText(a,S);
-  if(a==='siram'){S.tanah='lembap';S.lemas=0;fx='water'}
-  else if(a==='terang'){S.cahaya='terang';fx='sun'}
-  else if(a==='tanam'){S.tahap='benih';fx='grow'}
-  else{if(S.tanah==='basah')S.tanah='lembap';S.lemas=0;S.tahap=NEXTT[S.tahap];fx='grow'}
-  S.done.push(a);notes.push(m);beep(560,.08);
-  if(!pend().length){complete();return}
-  fbk=m+' Tapi tanaman masih butuh sesuatu. '+needText(nextNeed(),S);fbc='';busy=1;render();say(m);
-  setTimeout(()=>{if(!live())return;busy=0;fx='';render()},1300);
- };
- el.onclick=e=>{
-  const b=e.target.closest('button');if(!b)return;
-  if(b.dataset.x==='nxt'){if(!nxt){nxt=1;ans(true)}return}
-  if(b.dataset.a)act(b.dataset.a);
- };
- qtxt='Amati tanamannya: tanah, cahaya, dan tanamannya. Lalu pilih tindakan yang tepat!';
- render();
-}
-
-/* ======================================================================
-   Pendaftaran: judul, soal, petunjuk, level, kategori.
-   ID kupu/es/siram DIPERTAHANKAN (skor & bintang tersimpan tetap terbaca).
-   Data lama RP / seqR tidak dihapus: masih dipakai game 'urut' (Urutkan Langkah).
-   ====================================================================== */
-Object.assign(gi('kupu'),{t:'Metamorfosis',i:'Susun kartu tahap perubahan hewan sesuai urutannya!',r:metaGame,n:3});
-Object.assign(gi('es'),{t:'Susun Es Krim',i:'Buat es krim sesuai pesanan pelanggan!',r:esGame,n:3,th:ph(t(50,40,24,'🍨')+t(50,70,22,'🍒🍫')+bar)});
-Object.assign(gi('siram'),{t:'Susun Tanaman',i:'Lihat kondisi tanaman, lalu pilih cara merawatnya!',r:tanamanGame,n:3,th:ph(t(50,40,24,'🪴')+t(50,70,20,'💧☀️')+bar)});
-G.push({id:'sandwich',t:'Susun Sandwich',a:[4,6],n:3,img:1,i:'Tumpuk bahan menjadi sandwich sesuai pesanan!',th:ph(t(50,36,22,'🍞')+t(50,62,22,'🥬🍅')+t(50,90,22,'🍞')),r:swGame});
-H.kupu=['Lihat kartu-kartu tahap perubahan hewan.','Seret kartu ke kotak bernomor, atau ketuk kartu lalu ketuk kotaknya.','Susun dari tahap pertama sampai terakhir, lalu tekan Periksa.','Ada kupu-kupu dan katak. Belajar dulu di halaman materi juga boleh!'];
-LV.kupu=['Kartu ada tulisannya','Tulisan muncul setelah kartu dipasang','Kartu tanpa tulisan'];
-H.es=['Baca pesanan pelanggan di atas.','Pilih wadah, tambah scoop rasa, lalu pilih topping.','Es krimmu muncul di layar. Boleh dilepas atau diganti kalau salah.','Tekan Selesaikan Pesanan. Urutan memilih bahan tidak dinilai!'];
-LV.es=['1 rasa, 1 topping, ada gambar contoh','2 rasa, ada topping boleh (tidak wajib)','3 scoop (rasa boleh kembar), 2 topping wajib'];
-H.sandwich=['Lihat contoh atau pesanan sandwich.','Ketuk bahan di rak untuk menumpuknya, mulai dari roti bawah.','Tutup dengan roti di paling atas.','Tekan Periksa Sandwich untuk melihat hasilnya.'];
-LV.sandwich=['Tiru contoh persis, 2 isian','3 isian, urutan bebas','Ikuti aturan susunan khusus'];
-H.siram=['Lihat kondisi tanaman: tanahnya, cahayanya, dan tanamannya.','Pikirkan apa yang dibutuhkan tanaman itu.','Pilih tindakan: siram, pindah ke cahaya, tanam benih, atau beri waktu.','Tindakanmu mengubah tanamannya. Salah itu tidak apa-apa, ayo coba lagi!'];
-LV.siram=['Satu kebutuhan, ada petunjuk tertulis','Ada jebakan: tanah yang sudah basah','Ada yang butuh dua perawatan, tanpa petunjuk tertulis'];
-{const pl=catOf('pola');pl.g=pl.g.filter(x=>!['kupu','es','siram','sandwich'].includes(x));pl.g.splice(pl.g.indexOf('urut')+1,0,'kupu','es','sandwich','siram');GCAT.sandwich='pola'}
-})();
 
 syncStars();
 menu();
